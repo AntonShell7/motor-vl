@@ -3284,7 +3284,7 @@
     "id": "m1787369972",
     "brand": "yamaha",
     "brandLabel": "Yamaha",
-    "title": "Yamaha F30 (S) гидроподъем, пульт управления (1004394)",
+    "title": "Yamaha F30 EFI (S) гидроподъем, пульт управления (1004394)",
     "price": 500000,
     "img": "/media/motors/m1787369972/photo1.webp",
     "photos": [
@@ -3376,5 +3376,107 @@
       ]
     ],
     "badge": "Хит продаж"
+  },
+  {
+    "id": "m1787466905",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F60 EFI, (L), гидроподъем, пульт управления (1055006)",
+    "price": 450000,
+    "img": "/media/motors/m1787466905/photo1.jpg",
+    "photos": [
+      "/media/motors/m1787466905/photo1.jpg",
+      "/media/motors/m1787466905/photo2.jpg",
+      "/media/motors/m1787466905/photo3.jpg",
+      "/media/motors/m1787466905/photo4.jpg",
+      "/media/motors/m1787466905/photo5.jpg",
+      "/media/motors/m1787466905/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя",
+        "url": "/media/motors/m1787466720837/video/v20260823_e7acd842.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_e7acd842.jpg",
+        "duration": 158
+      },
+      {
+        "label": "Компрессия 1 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_e2d1c28b.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_e2d1c28b.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_5cef4041.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_5cef4041.jpg",
+        "duration": 27
+      },
+      {
+        "label": "Компрессия 3 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_575b6a26.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_575b6a26.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 4 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_d3fa0336.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_d3fa0336.jpg",
+        "duration": 27
+      },
+      {
+        "label": "Давление масла",
+        "url": "/media/motors/m1787466720837/video/v20260823_7fe21ff8.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_7fe21ff8.jpg",
+        "duration": 70
+      },
+      {
+        "label": "Проверка гидроподъема",
+        "url": "/media/motors/m1787466720837/video/v20260823_69608b98.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_69608b98.jpg",
+        "duration": 41
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2012"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "L (508 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "558 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
