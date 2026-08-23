@@ -272,11 +272,15 @@ document.addEventListener("DOMContentLoaded", function () {
   grid.innerHTML = '<p style="color:var(--text-muted);">Загружаем каталог…</p>';
 
   Promise.all([
-    fetch("data/motors.json").then(function (r) { return r.json(); }),
-    fetch("data/brands.json").then(function (r) { return r.json(); }),
+    // no-cache — не «не кешировать», а «каждый раз спрашивать сервер, не
+    // изменилось ли». Без этого браузер показывал старый каталог: мотор
+    // добавлен в панели, а на сайте его ещё нет. Если файл не менялся,
+    // сервер ответит «тот же» и ничего не скачается.
+    fetch("data/motors.json", { cache: "no-cache" }).then(function (r) { return r.json(); }),
+    fetch("data/brands.json", { cache: "no-cache" }).then(function (r) { return r.json(); }),
     // Обложки и длительность роликов лежат отдельно (их делает tools/make_posters.py).
     // Файла может не быть — тогда плитки видео просто останутся без картинки.
-    fetch("data/video-meta.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    fetch("data/video-meta.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).catch(function () { return null; })
   ]).then(function (results) {
     applyVideoMeta(results[0], results[2]);
     startCatalog(results[0], results[1]);
