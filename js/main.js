@@ -490,6 +490,43 @@ document.addEventListener("DOMContentLoaded", function () {
       field.remove();
     }
 
+    // Пока окно открыто, адрес показывает конкретный мотор — тогда ссылку
+    // можно скопировать прямо из адресной строки, а не только кнопкой.
+    //
+    // В историю браузера добавляем ровно одну запись — на первое открытие.
+    // Переключение между моторами адрес просто подменяет, иначе после десяти
+    // просмотренных карточек пришлось бы десять раз жать «назад», чтобы уйти.
+    // urlHasMotor — адрес сейчас указывает на мотор.
+    // pushedEntry — запись в историю добавили мы (а не переход по ссылке).
+    var urlHasMotor = false;
+    var pushedEntry = false;
+
+    function rememberMotorInUrl(motorId) {
+      if (!motorId || !history.pushState) return;
+      var url = location.pathname + "?motor=" + encodeURIComponent(motorId);
+      if (urlHasMotor) {
+        history.replaceState({ motor: motorId }, "", url);
+      } else {
+        history.pushState({ motor: motorId }, "", url);
+        urlHasMotor = true;
+        pushedEntry = true;
+      }
+    }
+
+    function forgetMotorInUrl() {
+      if (!urlHasMotor) return;
+      urlHasMotor = false;
+      if (pushedEntry) {
+        // Свою запись убираем шагом назад, а не новой записью: иначе после
+        // десяти открытых моторов в истории накопится десять адресов.
+        pushedEntry = false;
+        history.back();
+      } else if (history.replaceState) {
+        // Пришли по ссылке — своей записи нет, «назад» увело бы с сайта.
+        history.replaceState({}, "", location.pathname);
+      }
+    }
+
     function openWith(trigger) {
       var caption = trigger.getAttribute("data-caption") || "";
       var photos = [];
@@ -501,7 +538,9 @@ document.addEventListener("DOMContentLoaded", function () {
       state.photos = photos;
       state.index = 0;
       captionEl.textContent = caption;
-      renderShare(trigger.getAttribute("data-motor-id") || "");
+      var motorId = trigger.getAttribute("data-motor-id") || "";
+      renderShare(motorId);
+      rememberMotorInUrl(motorId);
 
       thumbsEl.innerHTML = photos.length > 1
         ? photos.map(function (src, i) {
@@ -584,6 +623,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var trigger = document.querySelector('[data-motor-id="' + wanted + '"]');
         if (trigger) {
           clearInterval(timer);
+          // Человек пришёл по ссылке: адрес уже правильный, и «назад» должно
+          // вести туда, откуда он пришёл, а не закрывать окно на месте.
+          urlHasMotor = true;
+          pushedEntry = false;
           openWith(trigger);
           var card = trigger.closest(".motor-card");
           if (card) card.scrollIntoView({ block: "center" });
@@ -593,6 +636,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 150);
     }
     openFromUrl();
+
+    // Кнопка «назад» (и жест смахивания на телефоне) закрывает окно и
+    // оставляет человека в каталоге — раньше она уводила с сайта целиком.
+    window.addEventListener("popstate", function () {
+      if (lightbox.classList.contains("open")) {
+        // Шаг назад сделал сам человек — окно закрываем, историю не трогаем.
+        urlHasMotor = false;
+        pushedEntry = false;
+        stopVideo();
+        lightbox.classList.remove("open");
+      }
+    });
 
     document.addEventListener("click", function (e) {
       var trigger = e.target.closest("[data-lightbox]");
@@ -612,6 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeLightbox() {
       stopVideo();
       lightbox.classList.remove("open");
+      forgetMotorInUrl();
     }
     closeBtn.addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", function (e) {
