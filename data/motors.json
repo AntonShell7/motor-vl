@@ -4,6 +4,7 @@
     "brandLabel": "Yamaha",
     "title": "Yamaha F25 (S), румпель (1043580)",
     "price": 220000,
+    "badge": "Хит продаж",
     "img": "/media/38/images/thumb/91M0tfSx.png",
     "photos": [
       "/media/38/images/thumb/91M0tfSx.png",
@@ -73,7 +74,8 @@
         ""
       ]
     ],
-    "id": "m38"
+    "id": "m38",
+    "badgeColor": "green"
   },
   {
     "brand": "yamaha",
@@ -3372,7 +3374,8 @@
         "Возможность увеличения мощности",
         "до 40 л.с."
       ]
-    ]
+    ],
+    "badge": "Хит продаж"
   },
   {
     "id": "m1787466905",
