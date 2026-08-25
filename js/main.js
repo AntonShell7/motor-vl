@@ -457,7 +457,9 @@ document.addEventListener("DOMContentLoaded", function () {
         box.innerHTML = "";
         return;
       }
-      var link = location.origin + "/motor/" + encodeURIComponent(motorId);
+      // Ссылка открывает то же окно с фото и видео прямо в каталоге:
+      // закрыв его, клиент остаётся в каталоге и смотрит остальные моторы.
+      var link = location.origin + "/catalog.html?motor=" + encodeURIComponent(motorId);
       box.innerHTML = '<button type="button" class="lightbox__share-btn">🔗 Скопировать ссылку на мотор</button>';
       box.querySelector(".lightbox__share-btn").addEventListener("click", function () {
         var btn = this;
@@ -610,10 +612,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeLightbox() {
       stopVideo();
       lightbox.classList.remove("open");
-      // На личной странице мотора закрывать окно некуда — уводим в каталог,
-      // чтобы клиент увидел остальные моторы, а не пустую страницу.
-      var backTo = lightbox.getAttribute("data-close-to");
-      if (backTo) location.href = backTo;
     }
     closeBtn.addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", function (e) {
