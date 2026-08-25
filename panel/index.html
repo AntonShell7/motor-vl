@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=6a9b2b17">
-<link rel="stylesheet" href="admin.css?v=817c2810">
+<link rel="stylesheet" href="admin.css?v=fcafe678">
 </head>
 <body class="admin-body">
 
@@ -95,13 +95,36 @@
         <button type="button" id="statsReset" class="admin-lead__btn admin-lead__btn--delete">Очистить статистику</button>
       </div>
       <div id="statsCards" class="stats-cards"></div>
-      <div id="statsChart" class="stats-chart"></div>
+
+      <div class="stats-panel">
+        <div class="stats-panel__head">
+          <div>
+            <h3 class="stats-title">Посещения по дням</h3>
+            <p class="stats-note">Высота столбика — сколько человек заходило в этот день. Нажмите на столбик, чтобы увидеть точные числа.</p>
+          </div>
+          <div id="statsDay" class="stats-day"></div>
+        </div>
+        <div id="statsChart" class="stats-chart"></div>
+      </div>
+
       <div class="stats-columns">
-        <div><h3 class="stats-title">Откуда приходят</h3><div id="statsSources"></div></div>
-        <div><h3 class="stats-title">Что смотрят</h3><div id="statsPages"></div></div>
+        <div class="stats-panel">
+          <h3 class="stats-title">Откуда приходят</h3>
+          <p class="stats-note">С какого сайта человек перешёл к нам. «Напрямую» — набрал адрес сам или открыл из закладок.</p>
+          <div id="statsSources"></div>
+        </div>
+        <div class="stats-panel">
+          <h3 class="stats-title">Какие страницы открывают</h3>
+          <p class="stats-note">Страницы сайта и сколько раз каждую открыли за выбранный период.</p>
+          <div id="statsPages"></div>
+        </div>
       </div>
       <div class="stats-columns stats-columns--single">
-        <div><h3 class="stats-title">Из каких мест заходят</h3><div id="statsRegions"></div></div>
+        <div class="stats-panel">
+          <h3 class="stats-title">Из каких мест заходят</h3>
+          <p class="stats-note">Определяется по часовому поясу устройства — примерно, без точного адреса.</p>
+          <div id="statsRegions"></div>
+        </div>
       </div>
 
       <div id="statsLog" class="stats-log" style="display:none;"></div>
@@ -181,7 +204,7 @@
   </main>
 </div>
 
-<script src="admin.js?v=62b3cee0"></script>
-<!-- сборка 744f40157749 -->
+<script src="admin.js?v=97e0fa7b"></script>
+<!-- сборка 21d211f1885e -->
 </body>
 </html>

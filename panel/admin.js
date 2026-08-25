@@ -28,6 +28,7 @@
   var statsRange = document.getElementById("statsRange");
   var statsCards = document.getElementById("statsCards");
   var statsChart = document.getElementById("statsChart");
+  var statsDay = document.getElementById("statsDay");
   var statsSources = document.getElementById("statsSources");
   var statsPages = document.getElementById("statsPages");
   var statsRegions = document.getElementById("statsRegions");
@@ -63,8 +64,9 @@
 
   // Плашка осталась одна — «Новый». «Хит продаж» и «Распродажа» забирали
   // внимание с фотографии и цены, ничего не сообщая о самом моторе.
+  // Выбирать не из чего, поэтому это не список, а выключатель: нажал —
+  // плашка есть, нажал ещё раз — плашки нет.
   var BADGES = [
-    { text: "", tone: "", label: "Без плашки", css: "transparent" },
     { text: "Новый", tone: "gold", css: "#d4af37" }
   ];
   var badgeColor = "";
@@ -392,20 +394,26 @@
     });
   }
 
-  // Три плашки кнопками: цвет показан кружком, выбранная подсвечена.
+  // Плашка-выключатель: нажатие на уже включённую снимает её.
   function renderBadgeChoices() {
     if (!badgeChoicesEl) return;
     badgeChoicesEl.innerHTML = BADGES.map(function (b) {
-      var active = (b.text || "") === (fBadge.value || "");
+      var active = b.text === (fBadge.value || "");
       return '<button type="button" class="badge-choice' + (active ? " is-active" : "") +
         '" data-text="' + escapeAttr(b.text) + '" data-tone="' + b.tone + '">' +
         '<span class="badge-choice__dot" style="background:' + b.css + '"></span>' +
         (b.label || b.text) + "</button>";
-    }).join("");
+    }).join("") +
+      '<span class="badge-choices__hint">' +
+      (fBadge.value ? "Плашка показывается на карточке. Нажмите, чтобы убрать."
+                    : "Плашки нет. Нажмите, чтобы отметить мотор как новый.") +
+      "</span>";
     badgeChoicesEl.querySelectorAll(".badge-choice").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        fBadge.value = btn.getAttribute("data-text");
-        badgeColor = btn.getAttribute("data-tone");
+        var text = btn.getAttribute("data-text");
+        var wasOn = fBadge.value === text;
+        fBadge.value = wasOn ? "" : text;
+        badgeColor = wasOn ? "" : btn.getAttribute("data-tone");
         renderBadgeChoices();
       });
     });
@@ -527,45 +535,104 @@
   var PAGE_NAMES = {
     "/": "Главная",
     "/index.html": "Главная",
-    "/catalog.html": "Каталог",
-    "/order.html": "Оставить заявку",
+    "/catalog.html": "Каталог моторов",
+    "/order.html": "Форма заявки",
     "/contacts.html": "Контакты",
     "/delivery.html": "Доставка и оплата",
     "/privacy.html": "Политика обработки данных",
-    "/404.html": "Страница не найдена",
-    "/panel/": "Панель управления"
+    "/terms.html": "Пользовательское соглашение",
+    "/404.html": "Ненайденная страница",
+    "/panel/": "Панель управления",
+    "/panel/index.html": "Панель управления"
   };
 
   function pageName(path) {
     if (PAGE_NAMES[path]) return PAGE_NAMES[path];
-    // Незнакомый адрес показываем как есть, но без расширения и слешей.
-    return path.replace(/^\//, "").replace(/\.html$/, "") || "Главная";
+    // Незнакомый адрес не выбрасываем, но и не показываем сырым: видно,
+    // что это чужая страница, и сразу понятно какая.
+    var clean = String(path).replace(/^\//, "").replace(/\.html$/, "");
+    return clean ? "Прочее: " + clean : "Главная";
+  }
+
+  var MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня",
+                "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+  var WEEKDAYS = ["воскресенье", "понедельник", "вторник", "среда",
+                  "четверг", "пятница", "суббота"];
+
+  // «2026-08-25» → «25 августа, вторник». Голая дата в формате базы
+  // требует расшифровки в уме, а это лишняя работа каждый раз.
+  function longDate(iso) {
+    var parts = String(iso).split("-");
+    var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    if (isNaN(d)) return iso;
+    return d.getDate() + " " + MONTHS[d.getMonth()] + ", " + WEEKDAYS[d.getDay()];
+  }
+
+  function plural(n, one, few, many) {
+    var a = Math.abs(n) % 100, b = a % 10;
+    if (a > 10 && a < 20) return many;
+    if (b > 1 && b < 5) return few;
+    if (b === 1) return one;
+    return many;
   }
 
   function renderStats(data) {
     var t = data.totals || {};
     statsCards.innerHTML = [
-      { label: "Посетителей", value: t.visitors || 0 },
-      { label: "Просмотров страниц", value: t.views || 0 },
-      { label: "Заявок", value: t.leads || 0 },
-      { label: "Посетителей на заявку", value: t.perLead || "—" }
+      { label: "Человек зашло", value: t.visitors || 0,
+        hint: "Один человек за день считается один раз" },
+      { label: "Страниц открыто", value: t.views || 0,
+        hint: "Каждое открытие страницы" },
+      { label: "Заявок оставили", value: t.leads || 0,
+        hint: "Через форму на сайте" },
+      { label: "Человек на одну заявку", value: t.perLead || "—",
+        hint: "Чем меньше, тем лучше" }
     ].map(function (c) {
       return '<div class="stats-card"><span class="stats-card__value">' + c.value +
-             '</span><span class="stats-card__label">' + c.label + "</span></div>";
+             '</span><span class="stats-card__label">' + c.label + "</span>" +
+             '<span class="stats-card__hint">' + c.hint + "</span></div>";
     }).join("");
 
     // Столбики рисуем сами: подключать библиотеку графиков ради одного
     // экрана — лишний вес и лишняя зависимость.
+    //
+    // Высота считается по числу людей, а не по просмотрам: «сколько народу
+    // было» — первый вопрос, который задают к такому графику.
     var series = data.series || [];
-    var max = series.reduce(function (m, d) { return Math.max(m, d.views); }, 0) || 1;
-    statsChart.innerHTML = series.map(function (d) {
-      var height = Math.round((d.views / max) * 100);
-      var day = d.date.slice(8) + "." + d.date.slice(5, 7);
-      return '<div class="stats-bar" title="' + day + ": " + d.visitors + " чел., " + d.views + ' просм.">' +
+    var max = series.reduce(function (m, d) { return Math.max(m, d.visitors); }, 0) || 1;
+    statsChart.innerHTML = series.map(function (d, i) {
+      var height = Math.round((d.visitors / max) * 100);
+      return '<button type="button" class="stats-bar" data-i="' + i + '">' +
+               '<span class="stats-bar__count">' + d.visitors + "</span>" +
                '<span class="stats-bar__fill" style="height:' + Math.max(height, 2) + '%"></span>' +
                '<span class="stats-bar__day">' + d.date.slice(8) + "</span>" +
-             "</div>";
+             "</button>";
     }).join("");
+
+    // Подпись под шапкой графика: какой день выбран и что в нём было.
+    // Всплывающая подсказка браузера тут не годится — на телефоне и
+    // планшете её просто не вызвать пальцем.
+    function showDay(i) {
+      var d = series[i];
+      if (!d) { statsDay.innerHTML = ""; return; }
+      statsChart.querySelectorAll(".stats-bar").forEach(function (b) {
+        b.classList.toggle("is-active", +b.getAttribute("data-i") === i);
+      });
+      statsDay.innerHTML =
+        '<span class="stats-day__date">' + longDate(d.date) + "</span>" +
+        '<span class="stats-day__nums">' +
+          "<b>" + d.visitors + "</b> " + plural(d.visitors, "человек", "человека", "человек") +
+          " · <b>" + d.views + "</b> " + plural(d.views, "просмотр", "просмотра", "просмотров") +
+        "</span>";
+    }
+
+    statsChart.querySelectorAll(".stats-bar").forEach(function (btn) {
+      var pick = function () { showDay(+btn.getAttribute("data-i")); };
+      btn.addEventListener("click", pick);
+      btn.addEventListener("mouseenter", pick);
+    });
+    // По умолчанию показываем последний день — он интереснее всего.
+    if (series.length) showDay(series.length - 1);
 
     statsSources.innerHTML = renderStatRows(data.sources, "Пока никто не заходил");
     statsPages.innerHTML = renderStatRows(data.pages, "Пока нет просмотров", pageName);

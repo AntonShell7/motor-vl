@@ -324,7 +324,9 @@
 /* Поле с единицей измерения: число вводится, «м/час» дорисовано рядом
    и не даёт менеджеру писать единицу по-своему. */
 /* Выбор плашки: три варианта кнопками, цвет показан кружком слева. */
-.badge-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge-choices { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+/* Подпись рядом с выключателем: без неё непонятно, включена плашка или нет. */
+.badge-choices__hint { font-size: 13px; color: var(--text-muted); }
 .badge-choice {
   display: inline-flex;
   align-items: center;
@@ -467,30 +469,95 @@
 }
 .stats-card__value { font-size: 26px; font-weight: 800; color: var(--navy-dark); line-height: 1.1; }
 .stats-card__label { font-size: 13px; color: var(--navy); opacity: .6; font-weight: 600; }
+.stats-card__hint { font-size: 11.5px; color: var(--text-muted); line-height: 1.35; margin-top: 4px; }
 
 /* Столбики посещаемости: рисуем сами, без библиотек графиков. */
+/* Каждый раздел статистики — своя карточка с заголовком и пояснением.
+   Раньше цифры висели на голом фоне, и приходилось догадываться, что
+   именно они считают. */
+.stats-panel {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(6,26,48,.06);
+  padding: 16px 18px 18px;
+  margin-bottom: 22px;
+}
+.stats-panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px 20px;
+  margin-bottom: 14px;
+}
+.stats-panel__head .stats-title { margin-bottom: 4px; }
+.stats-note {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+.stats-panel__head .stats-note { margin-bottom: 0; }
+
+/* Выбранный день: крупно и отдельно, чтобы число читалось без прищура. */
+.stats-day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  min-height: 40px;
+  text-align: right;
+}
+.stats-day__date { font-size: 12.5px; color: var(--text-muted); }
+.stats-day__nums { font-size: 15px; color: var(--navy-dark); }
+.stats-day__nums b { font-size: 19px; font-weight: 800; }
+
 .stats-chart {
   display: flex;
   align-items: flex-end;
   gap: 3px;
   height: 170px;
-  padding: 14px 16px 0;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(6,26,48,.06);
-  margin-bottom: 22px;
   overflow-x: auto;
 }
-.stats-bar { flex: 1; min-width: 8px; display: flex; flex-direction: column; align-items: center; height: 100%; }
+.stats-bar {
+  flex: 1;
+  min-width: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+/* Число над столбиком показывается только у выбранного: подписать все
+   сразу — получится каша из цифр. */
+.stats-bar__count {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  opacity: 0;
+  transition: opacity .12s ease;
+  padding-bottom: 3px;
+}
+.stats-bar.is-active .stats-bar__count { opacity: 1; }
 .stats-bar__fill {
   width: 100%;
   margin-top: auto;
   background: linear-gradient(180deg, var(--accent) 0%, #b8952c 100%);
   border-radius: 4px 4px 0 0;
-  transition: opacity .12s ease;
+  transition: opacity .12s ease, background .12s ease;
 }
 .stats-bar:hover .stats-bar__fill { opacity: .75; }
+.stats-bar.is-active .stats-bar__fill {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+  opacity: 1;
+}
 .stats-bar__day { font-size: 10px; color: var(--navy); opacity: .45; padding-top: 4px; }
+.stats-bar.is-active .stats-bar__day { opacity: .9; font-weight: 700; }
 
 /* Журнал заходов: плотная таблица, читается сверху вниз. */
 .stats-log {
@@ -545,6 +612,11 @@
 @media (max-width: 760px) {
   .stats-columns { grid-template-columns: 1fr; gap: 18px; }
   .stats-chart { height: 140px; }
+  /* На узком экране шапка графика идёт в столбик, и подпись выбранного
+     дня, прижатая вправо, повисала посреди пустоты. Ставим по левому
+     краю — читается вместе с заголовком. */
+  .stats-day { align-items: flex-start; text-align: left; }
+  .stats-panel { padding: 14px 14px 16px; }
 }
 
 .admin-form__actions { display: flex; align-items: center; gap: 16px; margin-top: 26px; }
