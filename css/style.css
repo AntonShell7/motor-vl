@@ -2288,7 +2288,7 @@ footer.site-footer .container { max-width: 1360px; }
      хлебные крошки: на телефоне «Главная / Каталог» съедает строку, ничего
      не давая — назад ведёт кнопка браузера. Всё это поднимает карточки выше,
      чтобы на первом экране была видна вторая. */
-  .page-hero { padding: 14px 0 14px; }
+  .page-hero { padding: 12px 0 12px; }
   .page-hero h1 { font-size: clamp(21px, 6vw, 26px); margin: 0; }
   .page-hero .breadcrumbs { display: none; }
   .jp-kanji-mark { font-size: 72px; top: -4px; opacity: .8; }
@@ -2297,23 +2297,18 @@ footer.site-footer .container { max-width: 1360px; }
   .catalog-toolbar { flex-direction: column; align-items: stretch; margin-bottom: 8px; }
   /* Вкладки брендов на телефоне были десктопного размера и занимали
      четыре строки. Уменьшаем — пять вкладок укладываются в две. */
-  /* Бренды в одну прокручиваемую строку вместо двух: экономит строку и
-     привычно по мобильным каталогам — список сдвигается пальцем вбок. */
+  /* Все бренды на виду. Прокрутка вбок не годится: кнопки обрезаются краем
+     экрана, а покупатель постарше не догадается сдвигать их пальцем. Лучше
+     две ровные строки, где всё видно сразу. */
   .brand-tabs {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: visible;
+    justify-content: center;
     gap: 6px;
-    padding-bottom: 4px;
-    margin-left: -16px;
-    margin-right: -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
   }
-  .brand-tabs::-webkit-scrollbar { display: none; }
-  .brand-tab { flex-shrink: 0; }
   .brand-tab {
     padding: 10px 14px;
     font-size: 14.5px;
@@ -2325,18 +2320,15 @@ footer.site-footer .container { max-width: 1360px; }
      рядом с вкладками. На телефоне он затягивал кнопки мощности прямо
      на бренды — здесь блоки идут друг под другом. */
   .hp-filter {
-    margin: 8px 0 10px;
+    margin: 8px 0 12px;
     gap: 7px;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: visible;
   }
-  .hp-filter::-webkit-scrollbar { display: none; }
-  .hp-filter__btn { flex-shrink: 0; }
-  /* Подпись «Мощность» стояла отдельной строкой по центру — теперь идёт
-     в одну линию с кнопками и не съедает высоту. */
-  .hp-filter__label { font-size: 13px; width: auto; margin: 0 2px 0 0; align-self: center; }
+  /* Подпись «Мощность» на телефоне убрана: из-за неё кнопки не помещались
+     в строку и переносились. Сами кнопки говорят за себя — «0–25 л.с.». */
+  .hp-filter__label { display: none; }
   /* Мощность — чуть мельче брендов и с золотистой заливкой: сразу видно,
      что это другой фильтр, а не продолжение списка марок. */
   .hp-filter__btn {
@@ -2359,18 +2351,19 @@ footer.site-footer .container { max-width: 1360px; }
      продолжается ниже. Вертикальная карточка занимала весь экран, и
      возникало ощущение, что мотор в каталоге один. */
   .motor-card { flex-direction: row; }
-  .motor-card__media { width: 40%; min-width: 132px; }
-  .motor-card__media img { height: 100%; min-height: 190px; }
-  .motor-card__body { padding: 14px 14px 16px; min-width: 0; }
-  .motor-card__title { font-size: 15px; line-height: 1.25; }
-  .motor-card__price { font-size: 21px; }
-  .motor-card__price span { font-size: 11px; }
-  .spec-list { padding: 9px 11px; gap: 4px; }
-  .spec-row { padding-bottom: 3px; }
-  .spec-row em { font-size: 11.5px; }
-  .spec-row b { font-size: 12px; }
-  /* Строка «Найдено позиций» на телефоне только отнимала высоту у карточек. */
-  #resultsCount { margin: 0 0 8px; font-size: 13px; }
+  .motor-card__media { width: 37%; min-width: 120px; }
+  .motor-card__media img { height: 100%; min-height: 150px; }
+  .motor-card__body { padding: 11px 12px 12px; min-width: 0; }
+  .motor-card__title { font-size: 13.5px; line-height: 1.25; margin-bottom: 6px; }
+  .motor-card__price { font-size: 18px; margin-bottom: 8px; }
+  .motor-card__price span { font-size: 10.5px; }
+  .spec-list { padding: 8px 10px; gap: 2px; }
+  .spec-row { padding-bottom: 2px; }
+  .spec-row em { font-size: 11px; }
+  .spec-row b { font-size: 11.5px; }
+  /* Строку «Найдено позиций» на телефоне убираем: количество и так написано
+     на кнопке бренда — «Yamaha (30)». Освободившаяся высота уходит карточкам. */
+  #resultsCount { display: none; }
   .motor-card__badge { font-size: 11px; padding: 5px 10px; top: 10px; left: 10px; }
   .motor-card__meta { bottom: 8px; right: 8px; }
   /* На узком экране окно занимает всё, поэтому крестику отводим полосу
@@ -2394,14 +2387,16 @@ footer.site-footer .container { max-width: 1360px; }
    иначе следующий мотор выглядывает всего на пару сантиметров и не читается
    как приглашение листать. */
 @media (max-width: 760px) and (max-height: 700px) {
-  .page-hero { padding: 10px 0 10px; }
-  .page-hero h1 { font-size: 20px; }
-  .motor-card__media img { min-height: 160px; }
-  .motor-card__body { padding: 11px 12px 12px; }
-  .motor-card__title { font-size: 14px; }
-  .motor-card__price { font-size: 19px; }
-  .spec-list { padding: 8px 10px; gap: 3px; }
-  .spec-row em, .spec-row b { font-size: 11.5px; }
+  .page-hero { padding: 8px 0 8px; }
+  .page-hero h1 { font-size: 19px; }
+  .brand-tab { padding: 8px 11px; font-size: 13px; }
+  .hp-filter__btn { padding: 7px 12px; font-size: 13px; }
+  .motor-card__media img { min-height: 130px; }
+  .motor-card__body { padding: 9px 10px 10px; }
+  .motor-card__title { font-size: 13px; }
+  .motor-card__price { font-size: 17px; }
+  .spec-list { padding: 7px 9px; gap: 1px; }
+  .spec-row em, .spec-row b { font-size: 10.5px; }
 }
 
 @media (max-width: 480px) {
