@@ -16,6 +16,13 @@
     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
+# ---------- Короткие адреса моторов ----------
+# motor-vl.ru/motor/1089388 вместо motor.php?id=1089388: такую ссылку
+# не стыдно отправить клиенту, и она не ломается при копировании.
+<IfModule mod_rewrite.c>
+    RewriteRule ^motor/([A-Za-z0-9_-]+)/?$ /motor.php?id=$1 [L,QSA]
+</IfModule>
+
 # ---------- Своя страница «не найдено» ----------
 ErrorDocument 404 /404.html
 

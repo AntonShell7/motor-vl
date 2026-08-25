@@ -227,6 +227,9 @@ document.addEventListener("DOMContentLoaded", function () {
             '<p class="motor-card__title">' + m.title + "</p>" +
             '<div class="motor-card__price">' + formatPrice(m.price) + "<span>Цена</span></div>" +
             (specsHtml ? '<div class="spec-list">' + specsHtml + "</div>" : "") +
+            // Отдельный адрес мотора: менеджеру есть что отправить клиенту,
+            // а поисковики видят каждую позицию отдельной страницей.
+            '<a class="motor-card__link" href="/motor/' + encodeURIComponent(m.id || "") + '">Открыть страницу мотора →</a>' +
           "</div>" +
         "</div>"
       );
