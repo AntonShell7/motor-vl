@@ -2320,29 +2320,17 @@ footer.site-footer .container { max-width: 1360px; }
      рядом с вкладками. На телефоне он затягивал кнопки мощности прямо
      на бренды — здесь блоки идут друг под другом. */
   .hp-filter {
-    margin: 12px 0 12px;
-    padding-top: 12px;
+    margin: 9px 0 10px;
+    padding-top: 9px;
     border-top: 1px solid rgba(6,26,48,.12);
     gap: 7px;
     justify-content: center;
     flex-wrap: wrap;
     overflow: visible;
   }
-  /* Бренды и мощность — разные фильтры, и они сливались в одну кучу кнопок.
-     Разделяем чертой с подписью: подпись отдельной строкой, а не в линию
-     с кнопками, иначе те снова переносятся. */
-  .hp-filter__label {
-    display: block;
-    width: 100%;
-    margin: 0 0 8px;
-    text-align: center;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--navy);
-    opacity: .5;
-  }
+  /* Бренды и мощность — разные фильтры. Хватает одной черты: сами кнопки
+     подписаны «л.с.», поэтому слово «Мощность» только съедало высоту. */
+  .hp-filter__label { display: none; }
   /* Мощность — чуть мельче брендов и с золотистой заливкой: сразу видно,
      что это другой фильтр, а не продолжение списка марок. */
   .hp-filter__btn {
@@ -2397,10 +2385,11 @@ footer.site-footer .container { max-width: 1360px; }
   .grid-3 { grid-template-columns: 1fr; }
 }
 
-/* Невысокие телефоны (iPhone SE и подобные): те же карточки, но плотнее —
-   иначе следующий мотор выглядывает всего на пару сантиметров и не читается
-   как приглашение листать. */
-@media (max-width: 760px) and (max-height: 700px) {
+/* Узкие телефоны (iPhone SE и подобные): те же карточки, но плотнее.
+   Считаем по ширине, а не по высоте: при листании браузер прячет адресную
+   строку, высота экрана скачет, и запрос по высоте включался-выключался
+   прямо под пальцем — весь каталог менял размер на ходу. */
+@media (max-width: 380px) {
   .page-hero { padding: 8px 0 8px; }
   .page-hero h1 { font-size: 19px; }
   .brand-tab { padding: 8px 11px; font-size: 13px; }

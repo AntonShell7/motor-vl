@@ -810,8 +810,13 @@
     fBrand.value = motor ? motor.brand : "yamaha";
     fTitle.value = motor ? motor.title : "";
     fPrice.value = motor ? motor.price : "";
-    fBadge.value = motor && motor.badge ? motor.badge : "";
-    badgeColor = motor && motor.badgeColor ? motor.badgeColor : "";
+    // Старые «Хит продаж» и «Распродажа» больше не существуют. Если такое
+    // значение осталось в карточке, показываем её без плашки — иначе при
+    // первом же сохранении убранная плашка вернулась бы в каталог.
+    var savedBadge = motor && motor.badge ? motor.badge : "";
+    var badgeKnown = BADGES.some(function (b) { return b.text === savedBadge; });
+    fBadge.value = badgeKnown ? savedBadge : "";
+    badgeColor = badgeKnown && motor && motor.badgeColor ? motor.badgeColor : "";
     renderBadgeChoices();
     formTitle.textContent = motor ? "Редактирование мотора" : "Новый мотор";
     deleteBtn.style.display = motor ? "inline-block" : "none";
