@@ -2288,11 +2288,11 @@ footer.site-footer .container { max-width: 1360px; }
      хлебные крошки: на телефоне «Главная / Каталог» съедает строку, ничего
      не давая — назад ведёт кнопка браузера. Всё это поднимает карточки выше,
      чтобы на первом экране была видна вторая. */
-  .page-hero { padding: 12px 0 12px; }
+  .page-hero { padding: 10px 0 10px; }
   .page-hero h1 { font-size: clamp(21px, 6vw, 26px); margin: 0; }
   .page-hero .breadcrumbs { display: none; }
   .jp-kanji-mark { font-size: 72px; top: -4px; opacity: .8; }
-  .section--tight { padding-top: 12px; }
+  .section--tight { padding-top: 8px; }
 
   .catalog-toolbar { flex-direction: column; align-items: stretch; margin-bottom: 8px; }
   /* Вкладки брендов на телефоне были десктопного размера и занимали
@@ -2320,15 +2320,29 @@ footer.site-footer .container { max-width: 1360px; }
      рядом с вкладками. На телефоне он затягивал кнопки мощности прямо
      на бренды — здесь блоки идут друг под другом. */
   .hp-filter {
-    margin: 8px 0 12px;
+    margin: 12px 0 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(6,26,48,.12);
     gap: 7px;
     justify-content: center;
     flex-wrap: wrap;
     overflow: visible;
   }
-  /* Подпись «Мощность» на телефоне убрана: из-за неё кнопки не помещались
-     в строку и переносились. Сами кнопки говорят за себя — «0–25 л.с.». */
-  .hp-filter__label { display: none; }
+  /* Бренды и мощность — разные фильтры, и они сливались в одну кучу кнопок.
+     Разделяем чертой с подписью: подпись отдельной строкой, а не в линию
+     с кнопками, иначе те снова переносятся. */
+  .hp-filter__label {
+    display: block;
+    width: 100%;
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: .5;
+  }
   /* Мощность — чуть мельче брендов и с золотистой заливкой: сразу видно,
      что это другой фильтр, а не продолжение списка марок. */
   .hp-filter__btn {

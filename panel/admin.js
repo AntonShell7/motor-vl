@@ -61,13 +61,11 @@
   var fBadge = document.getElementById("fBadge");
   var badgeChoicesEl = document.getElementById("badgeChoices");
 
-  // Плашек ровно три, каждая своего цвета. Свободный ввод убран намеренно:
-  // так в каталоге не появится десяток похожих надписей вроде «Хит!» и «ХИТ».
+  // Плашка осталась одна — «Новый». «Хит продаж» и «Распродажа» забирали
+  // внимание с фотографии и цены, ничего не сообщая о самом моторе.
   var BADGES = [
     { text: "", tone: "", label: "Без плашки", css: "transparent" },
-    { text: "Новый", tone: "gold", css: "#d4af37" },
-    { text: "Хит продаж", tone: "green", css: "#2f9e58" },
-    { text: "Распродажа", tone: "red", css: "#bc002d" }
+    { text: "Новый", tone: "gold", css: "#d4af37" }
   ];
   var badgeColor = "";
 
