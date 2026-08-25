@@ -2301,20 +2301,31 @@ footer.site-footer .container { max-width: 1360px; }
      экрана, а покупатель постарше не догадается сдвигать их пальцем. Лучше
      две ровные строки, где всё видно сразу. */
   .brand-tabs {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     overflow: visible;
-    justify-content: center;
     gap: 6px;
     margin: 0;
     padding: 0;
   }
+  /* Сетка, а не перенос по месту: при переносе на узком экране пятая
+     кнопка срывалась на третью строку и фильтр занимал пол-экрана.
+     Шесть колонок дают ровно 3 + 2 при любой длине надписи. */
+  .brand-tab { grid-column: span 2; }
+  /* Нижняя пара шире верхней тройки — «Tohatsu / Mercury» длинная и
+     иначе ломается на две строки. Условие срабатывает только когда
+     кнопок ровно пять; если список брендов изменится, останется
+     обычная сетка по три в ряд. */
+  .brand-tab:nth-child(4):nth-last-child(2),
+  .brand-tab:nth-child(5):nth-last-child(1) { grid-column: span 3; }
   .brand-tab {
-    padding: 10px 14px;
-    font-size: 14.5px;
+    padding: 9px 6px;
+    font-size: 13px;
     border-width: 1.5px;
+    text-align: center;
+    white-space: nowrap;
   }
-  .brand-tab .count { margin-left: 4px; font-size: 12px; }
+  .brand-tab .count { margin-left: 3px; font-size: 11px; }
 
   /* Отрицательный отступ сверху нужен на широком экране, где фильтр стоит
      рядом с вкладками. На телефоне он затягивал кнопки мощности прямо
@@ -2392,7 +2403,9 @@ footer.site-footer .container { max-width: 1360px; }
 @media (max-width: 380px) {
   .page-hero { padding: 8px 0 8px; }
   .page-hero h1 { font-size: 19px; }
-  .brand-tab { padding: 8px 11px; font-size: 13px; }
+  /* На 320px «Tohatsu / Mercury» не помещалась в свою ячейку и обрезалась. */
+  .brand-tab { padding: 8px 4px; font-size: 11.5px; }
+  .brand-tab .count { margin-left: 2px; font-size: 10px; }
   .hp-filter__btn { padding: 7px 12px; font-size: 13px; }
   .motor-card__media img { min-height: 130px; }
   .motor-card__body { padding: 9px 10px 10px; }
