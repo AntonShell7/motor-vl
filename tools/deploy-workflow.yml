@@ -78,3 +78,40 @@ jobs:
               --exclude-glob 'media/motors/*' \
               ./ \"$REMOTE_DIR\"
           "
+
+      # Первый проход сравнивает файлы только по размеру (--ignore-time), иначе
+      # каждый деплой перезаливал бы 130 МБ фотографий: git выдаёт всем файлам
+      # свежее время изменения, и по времени они всегда «новее» серверных.
+      #
+      # Но у сравнения по размеру есть дыра. В HTML прописана версия стилей
+      # вида style.css?v=6a9b2b17 — ровно восемь символов. Когда меняется
+      # только она, размер файла не меняется ни на байт, и lftp считает файл
+      # тем же самым. Правки вёрстки молча не доезжали до сайта.
+      #
+      # Поэтому текстовые папки заливаем вторым проходом, уже по времени:
+      # они весят копейки, и перезаливать их каждый раз ничего не стоит.
+      # Удаление лишнего сделал первый проход, здесь --delete не нужен.
+      - name: Долить страницы и скрипты
+        env:
+          HOST: ${{ secrets.FTP_SERVER }}
+          USER_NAME: ${{ secrets.FTP_USERNAME }}
+          PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          lftp -c "
+            set net:max-retries 5;
+            set net:timeout 30;
+            set net:reconnect-interval-base 5;
+            set sftp:auto-confirm yes;
+            open -u \"$USER_NAME\",\"$PASSWORD\" sftp://$HOST;
+            mirror --reverse --verbose --no-perms --no-recursion \
+              --include-glob '*.html' --include-glob '*.txt' --include-glob '*.xml' \
+              ./ \"$REMOTE_DIR\";
+            mirror --reverse --verbose --no-perms css/ \"$REMOTE_DIR/css\";
+            mirror --reverse --verbose --no-perms js/ \"$REMOTE_DIR/js\";
+            mirror --reverse --verbose --no-perms panel/ \"$REMOTE_DIR/panel\";
+            mirror --reverse --verbose --no-perms \
+              --exclude-glob 'config.local.php' api/ \"$REMOTE_DIR/api\";
+            mirror --reverse --verbose --no-perms \
+              --exclude-glob 'motors.json' data/ \"$REMOTE_DIR/data\";
+          "

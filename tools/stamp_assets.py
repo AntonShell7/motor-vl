@@ -59,6 +59,17 @@ def main():
                     updated = re.sub(r'(href|src)="%s(?:\?v=[^"]*)?"' % re.escape(name),
                                      lambda m, v=version, n=name: '%s="%s?v=%s"' % (m.group(1), n, v),
                                      updated)
+        # Отметка сборки внизу страницы. Нужна не для красоты: по ней видно,
+        # какая версия реально лежит на сайте, и размер файла меняется вместе
+        # с содержимым — иначе зеркалирование по размеру считает страницу
+        # неизменной и правки вёрстки не доезжают.
+        updated = re.sub(r"[ \t]*<!-- сборка [0-9a-f]+ -->\n?", "", updated)
+        marker = "<!-- сборка %s -->" % hashlib.sha1(updated.encode("utf-8")).hexdigest()[:12]
+        if "</body>" in updated:
+            updated = updated.replace("</body>", marker + "\n</body>", 1)
+        else:
+            updated = updated.rstrip() + "\n" + marker + "\n"
+
         if updated != text:
             open(page, "w", encoding="utf-8").write(updated)
             changed += 1
