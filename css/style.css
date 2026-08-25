@@ -1936,6 +1936,12 @@ footer.site-footer .container { max-width: 1360px; }
   transition: opacity .6s ease, transform .6s ease;
 }
 .reveal.in { opacity: 1; transform: translateY(0); }
+/* Если в телефоне включено «уменьшить движение», ничего не выезжает и не
+   мигает: блоки просто на месте. Плавная прокрутка тоже отключается. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
 
 /* ---------- Utilities ---------- */
 .text-center { text-align: center; }
@@ -2237,7 +2243,15 @@ footer.site-footer .container { max-width: 1360px; }
   .process { gap: 8px; }
   .process-step { padding: 14px 16px; gap: 12px; }
   .process-step h3 { margin-bottom: 3px; }
-  .cta-band { flex-direction: column; text-align: center; padding: 24px 20px; }
+  .cta-band { flex-direction: column; text-align: center; padding: 24px 18px; }
+  /* Крупная кнопка на телефоне не помещалась: nowrap плюс отступы по 36px
+     давали 346px при плашке в 342px, и кнопка вылезала за её край.
+     Уменьшаем и разрешаем переносить надпись. */
+  .btn--lg { font-size: 17px; padding: 15px 20px; white-space: normal; }
+  .btn { max-width: 100%; }
+  /* Внутри плашки кнопка занимает всю ширину — так она не упирается
+     в края и попасть по ней проще. */
+  .cta-band .btn { width: 100%; }
   .form-two-col { grid-template-columns: 1fr; }
   .delivery-grid { grid-template-columns: 1fr; }
   .text-page p { margin-bottom: 12px; }
@@ -2371,9 +2385,19 @@ footer.site-footer .container { max-width: 1360px; }
   .motor-card__price { font-size: 18px; margin-bottom: 8px; }
   .motor-card__price span { font-size: 10.5px; }
   .spec-list { padding: 8px 10px; gap: 2px; }
-  .spec-row { padding-bottom: 2px; }
-  .spec-row em { font-size: 11px; }
-  .spec-row b { font-size: 11.5px; }
+  /* На широком экране значение помещается в строку, на телефоне карточка
+     вдвое уже — и «мультирумпель, бак, шланг» превращалось в многоточие.
+     Разрешаем перенос: лучше две строки, чем обрезанная характеристика. */
+  .spec-row { padding-bottom: 2px; align-items: flex-start; gap: 8px; }
+  .spec-row em { font-size: 11px; line-height: 1.35; }
+  .spec-row b {
+    font-size: 11.5px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+  }
   /* Строку «Найдено позиций» на телефоне убираем: количество и так написано
      на кнопке бренда — «Yamaha (30)». Освободившаяся высота уходит карточкам. */
   #resultsCount { display: none; }

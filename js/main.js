@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ---------- Появление блоков при прокрутке ---------- */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
+    // threshold 0, а не 0.15: порог считается от площади самого блока, и
+    // высокая форма заявки должна была показать 300px, прежде чем проявиться.
+    // Теперь блок виден, как только в окно попал первый его пиксель.
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -59,12 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
+  // Страховка: блок с .reveal лежит прозрачным, пока его не покажет скрипт.
+  // Если наблюдатель почему-то не сработает, через две секунды показываем
+  // всё принудительно — пустая страница хуже, чем потерянная анимация.
+  setTimeout(function () {
+    document.querySelectorAll(".reveal:not(.in)").forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("in");
+    });
+  }, 2000);
 
   /* ---------- Счётчики цифр (18 лет, отзывы и т.д.) ---------- */
   var counters = document.querySelectorAll("[data-counter]");
