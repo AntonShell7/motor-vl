@@ -219,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
             metaHtml +
             '<img src="' + m.img + '" alt="' + m.title + '" loading="lazy" ' +
               'data-lightbox="' + m.img + '" data-caption="' + m.title + '" ' +
+              'data-motor-id="' + String(m.id || "").replace(/"/g, "&quot;") + '" ' +
               "data-photos='" + JSON.stringify(photos).replace(/'/g, "&#39;") + "' " +
               "data-videos='" + JSON.stringify(videos).replace(/'/g, "&#39;") + "' " +
               '>' +

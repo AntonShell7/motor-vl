@@ -97,6 +97,7 @@ $canonical = SITE . '/motor/' . rawurlencode((string) ($motor['id'] ?? ''));
       <div class="motor-page__media">
         <img class="motor-page__photo" src="<?= $esc($main) ?>" alt="<?= $esc($title) ?>"
              data-lightbox="<?= $esc($main) ?>" data-caption="<?= $esc($title) ?>"
+             data-motor-id="<?= $esc($motor['id'] ?? '') ?>"
              data-photos='<?= $photosJson ?>' data-videos='<?= $videosJson ?>'>
         <div class="motor-page__hint">Нажмите на фото — откроются все снимки и видео</div>
       </div>
@@ -130,5 +131,16 @@ $canonical = SITE . '/motor/' . rawurlencode((string) ($motor['id'] ?? ''));
 <?= $footer ?>
 
 <script src="/<?= $esc($jsSrc) ?>"></script>
+<script>
+  // Клиент пришёл по ссылке от менеджера — показываем фото и видео сразу,
+  // без лишнего нажатия. Закрыл окно — попал в каталог, а не в тупик.
+  (function () {
+    var box = document.querySelector(".lightbox");
+    var photo = document.querySelector(".motor-page__photo");
+    if (!box || !photo) return;
+    box.setAttribute("data-close-to", "/catalog.html");
+    setTimeout(function () { photo.click(); }, 100);
+  })();
+</script>
 </body>
 </html>

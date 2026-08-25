@@ -448,6 +448,46 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    // Ссылка на конкретный мотор прямо из окна с фото: менеджер копирует её
+    // и отправляет клиенту, тот попадает сразу сюда же.
+    function renderShare(motorId) {
+      var box = lightbox.querySelector(".lightbox__share");
+      if (!box) return;
+      if (!motorId) {
+        box.innerHTML = "";
+        return;
+      }
+      var link = location.origin + "/motor/" + encodeURIComponent(motorId);
+      box.innerHTML = '<button type="button" class="lightbox__share-btn">🔗 Скопировать ссылку на мотор</button>';
+      box.querySelector(".lightbox__share-btn").addEventListener("click", function () {
+        var btn = this;
+        var done = function () {
+          btn.textContent = "✓ Ссылка скопирована";
+          btn.classList.add("is-done");
+          setTimeout(function () {
+            btn.textContent = "🔗 Скопировать ссылку на мотор";
+            btn.classList.remove("is-done");
+          }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(done, function () { fallbackCopy(link, done); });
+        } else {
+          fallbackCopy(link, done);
+        }
+      });
+    }
+
+    // Запасной способ: в старых браузерах и без https clipboard недоступен.
+    function fallbackCopy(text, done) {
+      var field = document.createElement("textarea");
+      field.value = text;
+      field.style.cssText = "position:fixed;left:-9999px";
+      document.body.appendChild(field);
+      field.select();
+      try { document.execCommand("copy"); done(); } catch (e) { prompt("Скопируйте ссылку:", text); }
+      field.remove();
+    }
+
     function openWith(trigger) {
       var caption = trigger.getAttribute("data-caption") || "";
       var photos = [];
@@ -459,6 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
       state.photos = photos;
       state.index = 0;
       captionEl.textContent = caption;
+      renderShare(trigger.getAttribute("data-motor-id") || "");
 
       thumbsEl.innerHTML = photos.length > 1
         ? photos.map(function (src, i) {
@@ -531,6 +572,26 @@ document.addEventListener("DOMContentLoaded", function () {
       lightbox.classList.add("open");
     }
 
+    // Ссылка с мотором: открываем его окно сразу, без лишних нажатий.
+    function openFromUrl() {
+      var wanted = new URLSearchParams(location.search).get("motor");
+      if (!wanted) return;
+      var tries = 0;
+      // Карточки каталога появляются после загрузки данных — ждём их.
+      var timer = setInterval(function () {
+        var trigger = document.querySelector('[data-motor-id="' + wanted + '"]');
+        if (trigger) {
+          clearInterval(timer);
+          openWith(trigger);
+          var card = trigger.closest(".motor-card");
+          if (card) card.scrollIntoView({ block: "center" });
+        } else if (++tries > 40) {
+          clearInterval(timer);
+        }
+      }, 150);
+    }
+    openFromUrl();
+
     document.addEventListener("click", function (e) {
       var trigger = e.target.closest("[data-lightbox]");
       if (!trigger) {
@@ -549,6 +610,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeLightbox() {
       stopVideo();
       lightbox.classList.remove("open");
+      // На личной странице мотора закрывать окно некуда — уводим в каталог,
+      // чтобы клиент увидел остальные моторы, а не пустую страницу.
+      var backTo = lightbox.getAttribute("data-close-to");
+      if (backTo) location.href = backTo;
     }
     closeBtn.addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", function (e) {

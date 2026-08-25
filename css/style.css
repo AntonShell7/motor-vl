@@ -1210,6 +1210,24 @@ nav.main-nav a.active {
 .lightbox__box.panel-hidden .lightbox__panel { display: none; }
 
 .lightbox__caption { color: #fff; font-weight: 800; font-size: 17px; margin-bottom: 10px; }
+/* Кнопка «скопировать ссылку» в окне с фото: менеджер отправляет клиенту
+   ссылку на конкретный мотор, не выходя из просмотра. */
+.lightbox__share { margin: 10px 0 14px; }
+.lightbox__share-btn {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 100px;
+  padding: 9px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.lightbox__share-btn:hover { background: rgba(255,255,255,.22); }
+.lightbox__share-btn.is-done { background: var(--success); border-color: var(--success); }
+
 .lightbox__thumbs {
   display: flex;
   gap: 8px;
