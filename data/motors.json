@@ -2323,10 +2323,11 @@
     "id": "m41"
   },
   {
+    "id": "m98",
     "brand": "suzuki",
     "brandLabel": "Suzuki",
     "title": "Suzuki DF100A (X), гидравлика (310115)",
-    "price": 590000,
+    "price": 550000,
     "img": "/media/98/images/thumb/remaocuT.png",
     "photos": [
       "/media/98/images/thumb/qBwJMxe-.png",
@@ -2339,31 +2340,45 @@
     "videos": [
       {
         "label": "Запуск двигателя",
-        "url": "/media/98/video/BZI0td54.mp4"
+        "url": "/media/98/video/BZI0td54.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 1 цилиндр",
-        "url": "/media/98/video/evFe0DPR.mp4"
+        "url": "/media/98/video/evFe0DPR.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 2 цилиндр",
-        "url": "/media/98/video/asNP9Uoz.mp4"
+        "url": "/media/98/video/asNP9Uoz.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 3 цилиндр",
-        "url": "/media/98/video/rlCsk-Ar.mp4"
+        "url": "/media/98/video/rlCsk-Ar.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 4 цилиндр",
-        "url": "/media/98/video/38C6lJ4m.mp4"
+        "url": "/media/98/video/38C6lJ4m.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Давление масла",
-        "url": "/media/98/video/muc3ar6T.mp4"
+        "url": "/media/98/video/muc3ar6T.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Проверка гидроподъема",
-        "url": "/media/98/video/-oNgfUTE.mp4"
+        "url": "/media/98/video/-oNgfUTE.mp4",
+        "poster": "",
+        "duration": 0
       }
     ],
     "specs": [
@@ -2407,8 +2422,7 @@
         "Возможность увеличения мощности",
         ""
       ]
-    ],
-    "id": "m98"
+    ]
   },
   {
     "brand": "tohatsu",
