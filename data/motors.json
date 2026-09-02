@@ -841,6 +841,7 @@
     "id": "m86"
   },
   {
+    "id": "m88",
     "brand": "yamaha",
     "brandLabel": "Yamaha",
     "title": "Yamaha F90 EFI (L), гидравлика (1050195)",
@@ -852,36 +853,51 @@
       "/media/88/images/thumb/oRgC37Mn.jpeg",
       "/media/88/images/thumb/Z8f-MiQf.jpeg",
       "/media/88/images/thumb/LsAzkI5g.jpeg",
-      "/media/88/images/thumb/W8o2zAeg.jpeg"
+      "/media/88/images/thumb/W8o2zAeg.jpeg",
+      "/media/motors/m88/photo1.webp"
     ],
     "videos": [
       {
         "label": "Запуск двигателя",
-        "url": "/media/88/video/LPnAxlar.mp4"
+        "url": "/media/88/video/LPnAxlar.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 1 цилиндр",
-        "url": "/media/88/video/K8ANTYPt.mp4"
+        "url": "/media/88/video/K8ANTYPt.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 2 цилиндр",
-        "url": "/media/88/video/gJ9CdV3W.mp4"
+        "url": "/media/88/video/gJ9CdV3W.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 3 цилиндр",
-        "url": "/media/88/video/KW_ZV3Jz.mp4"
+        "url": "/media/88/video/KW_ZV3Jz.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 4 цилиндр",
-        "url": "/media/88/video/F3F_b2Oi.mp4"
+        "url": "/media/88/video/F3F_b2Oi.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Давление масла",
-        "url": "/media/88/video/_g8kGYln.mp4"
+        "url": "/media/88/video/_g8kGYln.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Проверка гидроподъема",
-        "url": "/media/88/video/111SvPI_.mp4"
+        "url": "/media/88/video/111SvPI_.mp4",
+        "poster": "",
+        "duration": 0
       }
     ],
     "specs": [
@@ -925,8 +941,7 @@
         "Возможность увеличения мощности",
         ""
       ]
-    ],
-    "id": "m88"
+    ]
   },
   {
     "brand": "yamaha",
