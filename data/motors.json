@@ -3206,5 +3206,100 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1788448787",
+    "brand": "suzuki",
+    "brandLabel": "Suzuki",
+    "title": "Suzuki DF20 EFI (S), гидроподъем, румпель",
+    "price": 250000,
+    "img": "/media/motors/m1788448787/photo1.jpg",
+    "photos": [
+      "/media/motors/m1788448787/photo1.jpg",
+      "/media/motors/m1788448787/photo2.jpg",
+      "/media/motors/m1788448787/photo3.jpg",
+      "/media/motors/m1788448787/photo4.jpg",
+      "/media/motors/m1788448787/photo5.jpg",
+      "/media/motors/m1788448787/photo6.jpg",
+      "/media/motors/m1788448787/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя .mp4",
+        "url": "/media/motors/m1788448689925/video/v20260903_52ca8e1c.mp4",
+        "poster": "/media/motors/m1788448689925/video/poster/v20260903_52ca8e1c.jpg",
+        "duration": 59
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1788448689925/video/v20260903_1bf6821c.mp4",
+        "poster": "/media/motors/m1788448689925/video/poster/v20260903_1bf6821c.jpg",
+        "duration": 42
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1788448689925/video/v20260903_cc262274.mp4",
+        "poster": "/media/motors/m1788448689925/video/poster/v20260903_cc262274.jpg",
+        "duration": 34
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1788448689925/video/v20260903_2ef90ae8.mp4",
+        "poster": "/media/motors/m1788448689925/video/poster/v20260903_2ef90ae8.jpg",
+        "duration": 161
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1788448689925/video/v20260903_05ec41e8.mp4",
+        "poster": "/media/motors/m1788448689925/video/poster/v20260903_05ec41e8.jpg",
+        "duration": 30
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2019"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "16/16"
+      ],
+      [
+        "Наработка",
+        "673 м/час"
+      ],
+      [
+        "Управление",
+        "румпельное"
+      ],
+      [
+        "Комплект",
+        "без комплекта"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ],
+      [
+        "Два стартера",
+        "электрический и ручной"
+      ]
+    ]
   }
 ]
