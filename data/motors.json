@@ -3301,5 +3301,100 @@
         "электрический и ручной"
       ]
     ]
+  },
+  {
+    "id": "m1788795763",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F25 (S), гидравлика, пульт управления (1040434)",
+    "price": 350000,
+    "img": "/media/motors/m1788795763/photo1.jpg",
+    "photos": [
+      "/media/motors/m1788795763/photo1.jpg",
+      "/media/motors/m1788795763/photo2.jpg",
+      "/media/motors/m1788795763/photo3.jpg",
+      "/media/motors/m1788795763/photo4.jpg",
+      "/media/motors/m1788795763/photo5.jpg",
+      "/media/motors/m1788795763/photo6.jpg",
+      "/media/motors/m1788795763/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1788795725174/video/v20260907_f5f8ca55.mp4",
+        "poster": "/media/motors/m1788795725174/video/poster/v20260907_f5f8ca55.jpg",
+        "duration": 176
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1788795725174/video/v20260907_8c9b8df9.mp4",
+        "poster": "/media/motors/m1788795725174/video/poster/v20260907_8c9b8df9.jpg",
+        "duration": 65
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1788795725174/video/v20260907_bed2f748.mp4",
+        "poster": "/media/motors/m1788795725174/video/poster/v20260907_bed2f748.jpg",
+        "duration": 43
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1788795725174/video/v20260907_6f6ea0f0.mp4",
+        "poster": "/media/motors/m1788795725174/video/poster/v20260907_6f6ea0f0.jpg",
+        "duration": 23
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1788795725174/video/v20260907_9c5c6cd6.mp4",
+        "poster": "/media/motors/m1788795725174/video/poster/v20260907_9c5c6cd6.jpg",
+        "duration": 45
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2020"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        ""
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ],
+      [
+        "Два стартера",
+        "электрический и ручной"
+      ]
+    ]
   }
 ]
