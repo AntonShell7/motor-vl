@@ -3396,5 +3396,101 @@
         "электрический и ручной"
       ]
     ]
+  },
+  {
+    "id": "m1788861927",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F30 EFI (S), гидравлика, пульт управления (1016152)",
+    "price": 460000,
+    "img": "/media/motors/m1788861927/photo4.jpg",
+    "photos": [
+      "/media/motors/m1788861927/photo1.jpg",
+      "/media/motors/m1788861927/photo2.jpg",
+      "/media/motors/m1788861927/photo3.jpg",
+      "/media/motors/m1788861927/photo4.jpg",
+      "/media/motors/m1788861927/photo5.jpg",
+      "/media/motors/m1788861927/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_5fef0407.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_5fef0407.jpg",
+        "duration": 173
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_c9f2dff3.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_c9f2dff3.jpg",
+        "duration": 68
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_a0eb33cd.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_a0eb33cd.jpg",
+        "duration": 29
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_6fe5f4d0.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_6fe5f4d0.jpg",
+        "duration": 23
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_f5bb1c80.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_f5bb1c80.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1788860953730/video/v20260908_cb689053.mp4",
+        "poster": "/media/motors/m1788860953730/video/poster/v20260908_cb689053.jpg",
+        "duration": 43
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2017"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "765 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        "до 40 л.с."
+      ]
+    ]
   }
 ]
