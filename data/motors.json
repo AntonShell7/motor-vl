@@ -3408,5 +3408,107 @@
         "до 40 л.с."
       ]
     ]
+  },
+  {
+    "id": "m1789029164",
+    "brand": "suzuki",
+    "brandLabel": "Suzuki",
+    "title": "Suzuki DF115 (X) (713751)",
+    "price": 600000,
+    "img": "/media/motors/m1789029164/photo1.jpg",
+    "photos": [
+      "/media/motors/m1789029164/photo1.jpg",
+      "/media/motors/m1789029164/photo2.jpg",
+      "/media/motors/m1789029164/photo3.jpg",
+      "/media/motors/m1789029164/photo4.jpg",
+      "/media/motors/m1789029164/photo5.jpg",
+      "/media/motors/m1789029164/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_468fefc3.mp4",
+        "poster": "/media/motors/m1789029090329/video/poster/v20260910_468fefc3.jpg",
+        "duration": 193
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_0199328a.mp4",
+        "poster": "/media/motors/m1789029090329/video/poster/v20260910_0199328a.jpg",
+        "duration": 72
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_1f9f1c5c.mp4",
+        "poster": "",
+        "duration": 0
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_65f6d27c.mp4",
+        "poster": "",
+        "duration": 0
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_df951ffe.mp4",
+        "poster": "",
+        "duration": 0
+      },
+      {
+        "label": "Компрессия 4 цилиндр.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_e7d00486.mp4",
+        "poster": "",
+        "duration": 0
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1789029090329/video/v20260910_f7f97ba1.mp4",
+        "poster": "/media/motors/m1789029090329/video/poster/v20260910_f7f97ba1.jpg",
+        "duration": 61
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2017"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "X (635 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "14/14/14/14"
+      ],
+      [
+        "Наработка",
+        "819 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "без комплекта"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
