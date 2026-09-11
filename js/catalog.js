@@ -258,7 +258,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Если пришли по ссылке с якорем бренда, например catalog.html#honda
     var hashBrand = location.hash.replace("#", "");
-    if (BRANDS.some(function (b) { return b.key === hashBrand; })) {
+    // Ссылка на конкретный мотор (catalog.html?motor=m34) важнее якоря:
+    // каталог показывает один бренд за раз, и без этого открывалась
+    // вкладка Yamaha — карточки Honda, Suzuki или запчасти на странице
+    // просто не было, окно не открывалось, человек видел начало каталога.
+    var wantedMotor = new URLSearchParams(location.search).get("motor");
+    var linked = wantedMotor && MOTORS.filter(function (m) { return m.id === wantedMotor; })[0];
+    if (linked && BRANDS.some(function (b) { return b.key === linked.brand; })) {
+      currentBrand = linked.brand;
+    } else if (BRANDS.some(function (b) { return b.key === hashBrand; })) {
       currentBrand = hashBrand;
     } else {
       currentBrand = BRANDS.length ? BRANDS[0].key : "";
