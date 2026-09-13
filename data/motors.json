@@ -2085,10 +2085,11 @@
     "id": "m33"
   },
   {
+    "id": "m41",
     "brand": "suzuki",
     "brandLabel": "Suzuki",
     "title": "Suzuki DF30 EFI (S), гидродемпфер (911065)",
-    "price": 390000,
+    "price": 370000,
     "img": "/media/41/images/thumb/Y1TJDBxJ.png",
     "photos": [
       "/media/41/images/thumb/A6PmrnIF.png",
@@ -2103,27 +2104,39 @@
     "videos": [
       {
         "label": "Запуск двигателя",
-        "url": "/media/41/video/qKI0-DJ1.mp4"
+        "url": "/media/41/video/qKI0-DJ1.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 1 цилиндр",
-        "url": "/media/41/video/AzeBrJK2.mp4"
+        "url": "/media/41/video/AzeBrJK2.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 2 цилиндр",
-        "url": "/media/41/video/h8eLdwUn.mp4"
+        "url": "/media/41/video/h8eLdwUn.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Компрессия 3 цилиндр",
-        "url": "/media/41/video/66l9tKaH.mp4"
+        "url": "/media/41/video/66l9tKaH.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Давление масла",
-        "url": "/media/41/video/rUqoB_D-.mp4"
+        "url": "/media/41/video/rUqoB_D-.mp4",
+        "poster": "",
+        "duration": 0
       },
       {
         "label": "Проверка гидродемпфера",
-        "url": "/media/41/video/mS6-AiQT.mp4"
+        "url": "/media/41/video/mS6-AiQT.mp4",
+        "poster": "",
+        "duration": 0
       }
     ],
     "specs": [
@@ -2167,8 +2180,7 @@
         "Возможность увеличения мощности",
         ""
       ]
-    ],
-    "id": "m41"
+    ]
   },
   {
     "id": "m98",
