@@ -8,6 +8,8 @@
 
 declare(strict_types=1);
 
+// (проверка заливки)
+
 require __DIR__ . '/lib.php';
 
 const STATS_DIR = PRIVATE_DIR . '/stats';
