@@ -167,7 +167,7 @@ are served locally. Publishing the site online will need them in separate storag
 PHP-файлов. Никаких сторонних платформ и внешних токенов, кроме бота Telegram.
 
 ```
-api/lead.php         приём заявки: уведомление в Telegram + архив в private/leads.json
+api/leads.php        приём заявки: уведомление в Telegram + архив в private/leads.json
 api/motors.php       каталог для панели /admin: пишет data/motors.json и media/motors/
 api/lib.php          общая часть: настройки, ответы, безопасная запись файлов
 api/config.local.php пароль и токен (создаётся на сервере, в git не попадает)

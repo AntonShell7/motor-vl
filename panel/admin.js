@@ -1,12 +1,12 @@
 // ===== МОТОР-ВЛ: логика админ-панели =====
-// Общается с /api/motors.php и /api/lead.php на своём хостинге:
+// Общается с /api/motors.php и /api/leads.php на своём хостинге:
 // каталог и заявки лежат файлами на сервере.
 
 (function () {
   "use strict";
 
   var API_URL = "/api/motors.php";
-  var LEADS_URL = "/api/lead.php";
+  var LEADS_URL = "/api/leads.php";
   var SESSION_KEY = "motorvl_admin_password";
 
   var loginScreen = document.getElementById("loginScreen");

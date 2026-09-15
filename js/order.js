@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         message: document.getElementById("fieldMessage").value
       };
 
-      fetch("/api/lead.php", {
+      fetch("/api/leads.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
