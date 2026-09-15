@@ -629,3 +629,11 @@
   .admin-main { padding: 16px 14px 40px; }
   .admin-form { padding: 18px; }
 }
+
+/* Проверка сервера: галочка или крестик и подсказка, что делать. */
+.selftest-list { list-style: none; margin: 0; padding: 0; }
+.selftest-item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; font-size: 14px; }
+.selftest-item + .selftest-item { border-top: 1px solid rgba(6,26,48,.07); }
+.selftest-item__mark { color: #1a7f37; font-weight: 800; }
+.selftest-item.is-bad .selftest-item__mark { color: var(--jp-red); }
+.selftest-item small { display: block; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }

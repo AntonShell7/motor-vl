@@ -125,19 +125,60 @@ function load_json_file(string $path, array $fallback = []): array
 
 // Запись через временный файл: если хостинг оборвёт скрипт на середине,
 // каталог не останется обрезанным наполовину.
+// Причина последней неудачной записи. Раньше save_json_file() отвечала просто
+// «не получилось», и в панели появлялось общее «ошибка сохранения» — по нему
+// невозможно понять, кончилось ли место на хостинге, слетели ли права или
+// пропала папка. Теперь причина сохраняется здесь и доходит до экрана.
+$GLOBALS['last_save_error'] = '';
+
+function last_save_error(): string
+{
+    return (string) ($GLOBALS['last_save_error'] ?? '');
+}
+
+function set_save_error(string $message): void
+{
+    $GLOBALS['last_save_error'] = $message;
+}
+
+// Сколько места осталось на диске — подсказка в сообщении об ошибке.
+function free_space_hint(string $path): string
+{
+    $free = @disk_free_space(is_dir($path) ? $path : dirname($path));
+    if ($free === false || $free === null) {
+        return '';
+    }
+    return ' Свободно на диске: ' . round($free / 1048576) . ' МБ.';
+}
+
 function save_json_file(string $path, array $data): bool
 {
+    set_save_error('');
     $dir = dirname($path);
+    $short = basename($path);
     if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
+        set_save_error('Не удалось создать папку ' . basename($dir) . ' — нет прав на запись.');
+        return false;
+    }
+    if (!is_writable($dir)) {
+        set_save_error('Папка ' . basename($dir) . ' закрыта для записи — нужны права 755.');
         return false;
     }
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if ($json === false) {
+        set_save_error('Данные не удалось преобразовать в JSON: ' . json_last_error_msg());
         return false;
     }
     $tmp = $path . '.tmp';
     if (file_put_contents($tmp, $json . "\n", LOCK_EX) === false) {
+        set_save_error('Не удалось записать ' . $short . '.' . free_space_hint($dir)
+            . ' Обычно это переполненный диск хостинга или права на папку.');
         return false;
     }
-    return rename($tmp, $path);
+    if (!rename($tmp, $path)) {
+        @unlink($tmp);
+        set_save_error('Не удалось заменить файл ' . $short . ' — он закрыт для записи (нужны права 644).');
+        return false;
+    }
+    return true;
 }

@@ -199,7 +199,7 @@ if ($method === 'POST') {
         $sent = notify_telegram($lead);
 
         if (!$saved && !$sent) {
-            json_out(500, ['error' => 'Не удалось принять заявку']);
+            json_out(500, ['error' => 'Не удалось принять заявку. ' . last_save_error()]);
         }
         json_out(200, ['ok' => true]);
     }
@@ -221,7 +221,9 @@ if ($method === 'POST') {
         if (!$found) {
             json_out(404, ['error' => 'Заявка не найдена']);
         }
-        save_json_file(LEADS_FILE, $leads);
+        if (!save_json_file(LEADS_FILE, $leads)) {
+            json_out(500, ['error' => 'Отметка не сохранена. ' . last_save_error()]);
+        }
         json_out(200, ['leads' => $leads]);
     }
 
@@ -232,7 +234,9 @@ if ($method === 'POST') {
         if (count($leads) === $before) {
             json_out(404, ['error' => 'Заявка не найдена']);
         }
-        save_json_file(LEADS_FILE, $leads);
+        if (!save_json_file(LEADS_FILE, $leads)) {
+            json_out(500, ['error' => 'Заявка не удалена. ' . last_save_error()]);
+        }
         json_out(200, ['leads' => $leads]);
     }
 

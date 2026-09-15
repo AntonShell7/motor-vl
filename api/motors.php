@@ -153,7 +153,7 @@ if ($action === 'delete' || $action === 'sell') {
 
     backup_catalog();
     if (!save_json_file(MOTORS_FILE, $motors)) {
-        json_out(500, ['error' => 'Не удалось записать data/motors.json — проверьте права на запись']);
+        json_out(500, ['error' => 'Каталог не сохранён. ' . last_save_error()]);
     }
     json_out(200, ['motors' => $motors, 'sold' => $sold]);
 }
@@ -194,7 +194,7 @@ if ($action === 'restoreSold') {
 
     backup_catalog();
     if (!save_json_file(MOTORS_FILE, $motors)) {
-        json_out(500, ['error' => 'Не удалось записать каталог']);
+        json_out(500, ['error' => 'Каталог не сохранён. ' . last_save_error()]);
     }
     save_json_file(SOLD_FILE, $sold);
     json_out(200, ['motors' => $motors, 'sold' => $sold]);
@@ -282,7 +282,7 @@ if ($action === 'save') {
 
     backup_catalog();
     if (!save_json_file(MOTORS_FILE, $motors)) {
-        json_out(500, ['error' => 'Не удалось записать data/motors.json — проверьте права на запись']);
+        json_out(500, ['error' => 'Каталог не сохранён. ' . last_save_error()]);
     }
     json_out(200, ['motors' => $motors, 'saved' => $record]);
 }

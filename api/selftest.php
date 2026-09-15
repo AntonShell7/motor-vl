@@ -11,7 +11,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/lib.php';
 
-require_admin($_GET['password'] ?? null);
+// Пароль принимаем заголовком — так панель может вызвать проверку сама,
+// не подставляя пароль в адрес (он попадает в логи и историю браузера).
+// Ручной способ ?password=... оставлен: им пользуются с телефона.
+require_admin($_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? ($_GET['password'] ?? null));
 
 $checks = [];
 
@@ -24,6 +27,15 @@ $checks[] = ['Файл настроек api/config.local.php', is_file(__DIR__ .
 $checks[] = ['Каталог data/motors.json доступен для записи',
     is_writable(DATA_DIR) && (!is_file(DATA_DIR . '/motors.json') || is_writable(DATA_DIR . '/motors.json')),
     'дайте папке data права 755, а файлу motors.json — 644'];
+
+// Переполненный диск ломает всё сразу: и сохранение мотора, и отметку заявки,
+// и счётчик посещений — причём с виду это выглядит как «просто не работает».
+$freeBytes = @disk_free_space(ROOT_DIR);
+$freeMb = $freeBytes === false ? 0 : (int) round($freeBytes / 1048576);
+$checks[] = ['Свободное место на диске: ' . ($freeBytes === false ? 'неизвестно' : $freeMb . ' МБ'),
+    $freeBytes === false || $freeMb > 50,
+    'места почти нет — сервер не может сохранить ни мотор, ни заявку. '
+    . 'Удалите старые видео или увеличьте тариф хостинга'];
 
 $checks[] = ['Папка private/ существует и доступна для записи',
     is_dir(PRIVATE_DIR) && is_writable(PRIVATE_DIR),
@@ -86,6 +98,16 @@ if (function_exists('curl_init')) {
         $probeCode !== 200,
         'СРОЧНО: файл с телефонами клиентов открыт всему интернету. Если хостинг на nginx, '
         . 'закройте папку private в панели хостинга или перенесите её выше корня сайта'];
+}
+
+// Панель просит JSON и показывает проверки у себя; человек, открывший
+// адрес вручную, по-прежнему получает обычную страницу.
+if (($_GET['format'] ?? '') === 'json') {
+    $out = [];
+    foreach ($checks as $check) {
+        $out[] = ['name' => $check[0], 'ok' => (bool) $check[1], 'hint' => $check[2]];
+    }
+    json_out(200, ['checks' => $out]);
 }
 
 header('Content-Type: text/html; charset=utf-8');

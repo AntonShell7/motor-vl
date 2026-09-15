@@ -419,6 +419,47 @@
     });
   }
 
+  // ---------- Проверка сервера ----------
+  // Когда что-то «просто не сохраняется», причина почти всегда на хостинге:
+  // кончилось место, слетели права на папку. Раньше это выяснялось перепиской,
+  // теперь — одной кнопкой, без пароля в адресной строке.
+  var selftestBtn = document.getElementById("selftestBtn");
+  var selftestBox = document.getElementById("selftestBox");
+
+  if (selftestBtn && selftestBox) {
+    selftestBtn.addEventListener("click", function () {
+      selftestBox.style.display = "block";
+      selftestBox.innerHTML = '<p style="color:var(--text-muted);">Проверяем сервер…</p>';
+      fetch("/api/selftest.php?format=json", { headers: { "x-admin-password": password() } })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) throw new Error(data.error || "Проверка не выполнилась");
+            return data;
+          });
+        })
+        .then(function (data) {
+          var checks = data.checks || [];
+          var bad = checks.filter(function (c) { return !c.ok; });
+          selftestBox.innerHTML =
+            '<h3 class="stats-title">' +
+              (bad.length ? "Найдено проблем: " + bad.length : "Всё в порядке") +
+            "</h3>" +
+            '<ul class="selftest-list">' +
+            checks.map(function (c) {
+              return '<li class="selftest-item' + (c.ok ? "" : " is-bad") + '">' +
+                '<span class="selftest-item__mark">' + (c.ok ? "✓" : "✕") + "</span>" +
+                "<span><b>" + escapeAttr(c.name) + "</b>" +
+                (c.ok ? "" : '<small>' + escapeAttr(c.hint) + "</small>") +
+                "</span></li>";
+            }).join("") +
+            "</ul>";
+        })
+        .catch(function (err) {
+          selftestBox.innerHTML = '<p style="color:var(--jp-red);">' + err.message + "</p>";
+        });
+    });
+  }
+
   // ---------- Продано ----------
   // Снятые с продажи моторы не исчезают: карточка со всеми фото и видео
   // лежит в архиве. Оттуда её возвращают одним нажатием, если сняли по
@@ -836,13 +877,21 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password: password(), action: "markViewed", id: id, viewed: viewed })
         })
-          .then(function (res) { return res.json(); })
+          // Ответ с ошибкой раньше молча проглатывался: заявка не менялась,
+          // а на экране ничего не появлялось. Теперь показываем то, что
+          // ответил сервер, — там написана причина.
+          .then(function (res) {
+            return res.json().then(function (data) {
+              if (!res.ok) throw new Error(data.error || "Ошибка обновления");
+              return data;
+            });
+          })
           .then(function (data) {
             currentLeads = data.leads || currentLeads;
             updateLeadsBadge();
             renderLeads();
           })
-          .catch(function () { showLeadsStatus("Ошибка обновления", true); });
+          .catch(function (err) { showLeadsStatus(err.message || "Ошибка обновления", true); });
       });
     });
 
@@ -855,14 +904,19 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password: password(), action: "delete", id: id })
         })
-          .then(function (res) { return res.json(); })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              if (!res.ok) throw new Error(data.error || "Ошибка удаления");
+              return data;
+            });
+          })
           .then(function (data) {
             currentLeads = data.leads || currentLeads;
             updateLeadsBadge();
             renderLeads();
             showLeadsStatus("Заявка удалена");
           })
-          .catch(function () { showLeadsStatus("Ошибка удаления", true); });
+          .catch(function (err) { showLeadsStatus(err.message || "Ошибка удаления", true); });
       });
     });
   }
