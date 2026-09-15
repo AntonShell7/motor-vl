@@ -101,6 +101,15 @@
     return sessionStorage.getItem(SESSION_KEY) || "";
   }
 
+  // Пароль уходит на сервер заголовком, а в заголовок нельзя положить
+  // русские буквы, длинное тире или перенос строки: браузер отказывается
+  // отправлять такой запрос вообще. Пароль с кириллицей делал вход
+  // невозможным, и панель выглядела наглухо сломанной. Поэтому кодируем —
+  // сервер раскодирует обратно. Латинский пароль при этом не меняется.
+  function passHeader(pass) {
+    return { "x-admin-password": encodeURIComponent(pass === undefined ? password() : pass) };
+  }
+
   function formatPrice(n) {
     return Number(n || 0).toLocaleString("ru-RU") + " ₽";
   }
@@ -116,7 +125,12 @@
   // ---------- Вход ----------
   function tryLogin(pass) {
     loginError.textContent = "";
-    return fetch(API_URL, { headers: { "x-admin-password": pass } })
+    // Promise.resolve().then(...) — чтобы даже мгновенный отказ браузера
+    // пришёл как обычная ошибка, а не оборвал обработчик нажатия: иначе
+    // кнопка «Войти» оставалась заблокированной навсегда.
+    return Promise.resolve().then(function () {
+      return fetch(API_URL, { headers: passHeader(pass) });
+    })
       .then(function (res) {
         if (res.status === 401) throw new Error("Неверный пароль");
         if (!res.ok) return res.json().then(function (d) { throw new Error(d.error || "Ошибка сервера"); });
@@ -136,7 +150,7 @@
     var pass = passwordInput.value;
     if (!pass) return;
     loginBtn.disabled = true;
-    tryLogin(pass).then(function () { loginBtn.disabled = false; });
+    tryLogin(pass).finally(function () { loginBtn.disabled = false; });
   });
   passwordInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") loginBtn.click();
@@ -431,7 +445,7 @@
     selftestBtn.addEventListener("click", function () {
       selftestBox.style.display = "block";
       selftestBox.innerHTML = '<p style="color:var(--text-muted);">Проверяем сервер…</p>';
-      fetch("/api/selftest.php?format=json", { headers: { "x-admin-password": password() } })
+      fetch("/api/selftest.php?format=json", { headers: passHeader() })
         .then(function (res) {
           return res.json().then(function (data) {
             if (!res.ok) throw new Error(data.error || "Проверка не выполнилась");
@@ -630,7 +644,7 @@
   // заходов, сколько людей, откуда пришли и что смотрели.
   function loadStats() {
     var days = statsRange ? statsRange.value : 30;
-    return fetch("/api/stats.php?days=" + days, { headers: { "x-admin-password": password() } })
+    return fetch("/api/stats.php?days=" + days, { headers: passHeader() })
       .then(function (res) {
         return res.json().then(function (data) {
           if (!res.ok) throw new Error(data.error || "Не удалось получить статистику");
@@ -771,7 +785,7 @@
     }, 60);
     statsLog.innerHTML = '<p style="color:var(--text-muted);">Загружаем…</p>';
 
-    fetch("/api/stats.php?log=1", { headers: { "x-admin-password": password() } })
+    fetch("/api/stats.php?log=1", { headers: passHeader() })
       .then(function (res) {
         return res.json().then(function (data) {
           if (!res.ok) throw new Error(data.error || "Не удалось получить журнал");
@@ -852,7 +866,7 @@
 
   // ---------- Заявки ----------
   function loadLeads() {
-    fetch(LEADS_URL, { headers: { "x-admin-password": password() } })
+    fetch(LEADS_URL, { headers: passHeader() })
       .then(function (res) { return res.ok ? res.json() : { leads: [] }; })
       .then(function (data) {
         currentLeads = data.leads || [];

@@ -32,7 +32,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     json_out(200, ['ok' => true, 'removed' => $removed]);
 }
 
-require_admin($_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? ($_GET['password'] ?? null));
+require_admin(admin_password_header() ?? ($_GET['password'] ?? null));
 
 // Журнал последних заходов — по отдельному запросу, чтобы не тащить его
 // каждый раз вместе со сводкой.

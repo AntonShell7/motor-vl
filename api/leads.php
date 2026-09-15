@@ -258,7 +258,7 @@ if ($method === 'POST') {
 }
 
 if ($method === 'GET') {
-    require_admin($_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? null);
+    require_admin(admin_password_header());
     json_out(200, ['leads' => load_json_file(LEADS_FILE)]);
 }
 

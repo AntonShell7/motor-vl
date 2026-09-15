@@ -14,7 +14,7 @@ require __DIR__ . '/lib.php';
 // Пароль принимаем заголовком — так панель может вызвать проверку сама,
 // не подставляя пароль в адрес (он попадает в логи и историю браузера).
 // Ручной способ ?password=... оставлен: им пользуются с телефона.
-require_admin($_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? ($_GET['password'] ?? null));
+require_admin(admin_password_header() ?? ($_GET['password'] ?? null));
 
 $checks = [];
 

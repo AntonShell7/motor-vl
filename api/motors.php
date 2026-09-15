@@ -114,7 +114,7 @@ function backup_catalog(): bool
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
 if ($method === 'GET') {
-    require_admin($_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? null);
+    require_admin(admin_password_header());
     json_out(200, ['motors' => load_json_file(MOTORS_FILE)]);
 }
 

@@ -102,6 +102,16 @@ function is_staff(): bool
     return false;
 }
 
+// Пароль приходит заголовком в закодированном виде: в заголовок HTTP нельзя
+// положить русские буквы, и браузер отказывался отправлять такой запрос —
+// панель с кириллическим паролем не открывалась совсем. Латинские пароли
+// кодирование не меняет, поэтому старые продолжают работать.
+function admin_password_header(): ?string
+{
+    $raw = $_SERVER['HTTP_X_ADMIN_PASSWORD'] ?? null;
+    return $raw === null ? null : rawurldecode((string) $raw);
+}
+
 function require_admin($password): void
 {
     if (!check_password($password)) {
