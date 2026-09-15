@@ -460,6 +460,77 @@
     });
   }
 
+  // ---------- Уборка диска ----------
+  // Видео и фотографии удалённых моторов остаются на диске и незаметно
+  // съедают место. Когда диск заполнен, сервер перестаёт создавать файлы,
+  // и панель перестаёт сохранять вообще всё. Здесь видно, сколько лишнего,
+  // и одной кнопкой это убирается.
+  var diskBtn = document.getElementById("diskBtn");
+  var diskBox = document.getElementById("diskBox");
+
+  function mb(bytes) {
+    var value = (bytes || 0) / 1048576;
+    return value >= 1024 ? (value / 1024).toFixed(1) + " ГБ" : Math.round(value) + " МБ";
+  }
+
+  function renderDisk(data, note) {
+    var d = data.disk || {};
+    var orphans = d.orphans || [];
+    diskBox.innerHTML =
+      (note ? '<p class="disk-note">' + note + "</p>" : "") +
+      '<div class="stats-cards">' +
+        '<div class="stats-card"><span class="stats-card__value">' + mb(d.total) + "</span>" +
+          '<span class="stats-card__label">Всего в папке media</span></div>' +
+        '<div class="stats-card"><span class="stats-card__value">' + mb(d.used) + "</span>" +
+          '<span class="stats-card__label">Нужно каталогу и архиву</span></div>' +
+        '<div class="stats-card"><span class="stats-card__value">' + mb(d.orphanSize) + "</span>" +
+          '<span class="stats-card__label">Лишнее: ' + (d.orphanCount || 0) + " файлов</span>" +
+          '<span class="stats-card__hint">Ни один мотор на них не ссылается</span></div>' +
+        '<div class="stats-card"><span class="stats-card__value">' + mb(data.free) + "</span>" +
+          '<span class="stats-card__label">Свободно на диске</span></div>' +
+      "</div>" +
+      (d.orphanCount
+        ? '<p class="disk-note">Самые тяжёлые из лишних:</p>' +
+          '<ul class="selftest-list">' +
+          orphans.map(function (o) {
+            return '<li class="selftest-item"><span class="selftest-item__mark">·</span>' +
+              "<span>" + escapeAttr(o.path) + " <b>" + mb(o.size) + "</b></span></li>";
+          }).join("") +
+          "</ul>" +
+          '<button type="button" id="diskCleanBtn" class="admin-lead__btn admin-lead__btn--delete">' +
+            "Удалить лишнее (" + mb(d.orphanSize) + ")</button>"
+        : '<p class="disk-note">Лишних файлов нет — всё, что лежит на диске, используется.</p>');
+
+    var cleanBtn = document.getElementById("diskCleanBtn");
+    if (cleanBtn) {
+      cleanBtn.addEventListener("click", function () {
+        if (!confirm("Удалить " + (d.orphanCount || 0) + " файлов, на которые не ссылается ни один мотор?\n\n" +
+                     "Фотографии и видео моторов из каталога и из архива проданных не пострадают.")) return;
+        cleanBtn.disabled = true;
+        cleanBtn.textContent = "Удаляем…";
+        apiAction("diskClean", {})
+          .then(function (res) {
+            renderDisk(res, "Удалено файлов: " + res.removed + ", освобождено " + mb(res.freed) + ".");
+          })
+          .catch(function (err) {
+            diskBox.innerHTML = '<p style="color:var(--jp-red);">' + err.message + "</p>";
+          });
+      });
+    }
+  }
+
+  if (diskBtn && diskBox) {
+    diskBtn.addEventListener("click", function () {
+      diskBox.style.display = "block";
+      diskBox.innerHTML = '<p style="color:var(--text-muted);">Считаем файлы, это может занять полминуты…</p>';
+      apiAction("diskScan", {})
+        .then(function (res) { renderDisk(res, ""); })
+        .catch(function (err) {
+          diskBox.innerHTML = '<p style="color:var(--jp-red);">' + err.message + "</p>";
+        });
+    });
+  }
+
   // ---------- Продано ----------
   // Снятые с продажи моторы не исчезают: карточка со всеми фото и видео
   // лежит в архиве. Оттуда её возвращают одним нажатием, если сняли по
