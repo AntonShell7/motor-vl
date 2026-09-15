@@ -594,82 +594,6 @@
   {
     "brand": "yamaha",
     "brandLabel": "Yamaha",
-    "title": "Yamaha F30 EFI (S), гидродемпфер, пульт управления (1001729)",
-    "price": 470000,
-    "img": "/media/75/images/thumb/mm0qBOBG.png",
-    "photos": [
-      "/media/75/images/thumb/_0O4RsRi.png",
-      "/media/75/images/thumb/mm0qBOBG.png",
-      "/media/75/images/thumb/czEcH0ik.png",
-      "/media/75/images/thumb/3ZFcUQKn.png",
-      "/media/75/images/thumb/0_tgvSik.png",
-      "/media/75/images/thumb/cZFbdBqO.png"
-    ],
-    "videos": [
-      {
-        "label": "Запуск двигателя",
-        "url": "/media/75/video/664e68hm.mp4"
-      },
-      {
-        "label": "Компрессия 2 цилиндр",
-        "url": "/media/75/video/Aqq8kU2O.mp4"
-      },
-      {
-        "label": "Давление масла",
-        "url": "/media/75/video/nwkkgzZY.mp4"
-      },
-      {
-        "label": "Проверка гидродемпфера",
-        "url": "/media/75/video/X6csDnVx.mp4"
-      }
-    ],
-    "specs": [
-      [
-        "Год",
-        "2018"
-      ],
-      [
-        "Состояние",
-        "б/у"
-      ],
-      [
-        "Тактность",
-        "4-тактный"
-      ],
-      [
-        "Длина ноги",
-        "S (381 мм)"
-      ],
-      [
-        "Подъем",
-        "ручной (гидродемпфер)"
-      ],
-      [
-        "Компрессия",
-        "15/15/15"
-      ],
-      [
-        "Наработка",
-        "459 м/час"
-      ],
-      [
-        "Управление",
-        "дистанционное"
-      ],
-      [
-        "Комплект",
-        "продаётся с машинкой"
-      ],
-      [
-        "Возможность увеличения мощности",
-        ""
-      ]
-    ],
-    "id": "m75"
-  },
-  {
-    "brand": "yamaha",
-    "brandLabel": "Yamaha",
     "title": "Yamaha F90 EFI (L), гидравлика (1050413)",
     "price": 490000,
     "img": "/media/86/images/thumb/8T3_y5g5.jpeg",
@@ -3520,6 +3444,174 @@
       [
         "Возможность увеличения мощности",
         ""
+      ]
+    ]
+  },
+  {
+    "id": "m1789503887",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F30 EFI (S), гидравлика, пульт управления",
+    "price": 490000,
+    "img": "/media/motors/m1789503887/photo1.jpg",
+    "photos": [
+      "/media/motors/m1789503887/photo1.jpg",
+      "/media/motors/m1789503887/photo2.jpg",
+      "/media/motors/m1789503887/photo3.jpg",
+      "/media/motors/m1789503887/photo4.jpg",
+      "/media/motors/m1789503887/photo5.jpg",
+      "/media/motors/m1789503887/photo6.jpg",
+      "/media/motors/m1789503887/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1789503849807/video/v20260915_0c98935c.mp4",
+        "poster": "/media/motors/m1789503849807/video/poster/v20260915_0c98935c.jpg",
+        "duration": 76
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1789503849807/video/v20260915_fa622beb.mp4",
+        "poster": "/media/motors/m1789503849807/video/poster/v20260915_fa622beb.jpg",
+        "duration": 39
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1789503887/video/v20260915_934f4c81.mp4",
+        "poster": "/media/motors/m1789503887/video/poster/v20260915_934f4c81.jpg",
+        "duration": 76
+      },
+      {
+        "label": "Компьютерная диагностика.mp4",
+        "url": "/media/motors/m1789503887/video/v20260915_7d0ffef2.mp4",
+        "poster": "/media/motors/m1789503887/video/poster/v20260915_7d0ffef2.jpg",
+        "duration": 169
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2021"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "438 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        "до 40 л.с."
+      ]
+    ]
+  },
+  {
+    "id": "m1789504190",
+    "brand": "suzuki",
+    "brandLabel": "Suzuki",
+    "title": "Suzuki DF 9.9 EFI (S) (910210)",
+    "price": 180000,
+    "img": "/media/motors/m1789504190/photo1.jpg",
+    "photos": [
+      "/media/motors/m1789504190/photo1.jpg",
+      "/media/motors/m1789504190/photo2.jpg",
+      "/media/motors/m1789504190/photo3.jpg",
+      "/media/motors/m1789504190/photo4.jpg",
+      "/media/motors/m1789504190/photo5.jpg",
+      "/media/motors/m1789504190/photo6.jpg",
+      "/media/motors/m1789504190/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1789504087128/video/v20260915_8649ec99.mp4",
+        "poster": "/media/motors/m1789504087128/video/poster/v20260915_8649ec99.jpg",
+        "duration": 161
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1789504087128/video/v20260915_f9fef6de.mp4",
+        "poster": "/media/motors/m1789504087128/video/poster/v20260915_f9fef6de.jpg",
+        "duration": 33
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1789504087128/video/v20260915_f87ffae4.mp4",
+        "poster": "/media/motors/m1789504087128/video/poster/v20260915_f87ffae4.jpg",
+        "duration": 29
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2018"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "ручной"
+      ],
+      [
+        "Компрессия",
+        "16/16"
+      ],
+      [
+        "Наработка",
+        "450 м/час"
+      ],
+      [
+        "Управление",
+        "румпельное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        "до 20 л.с."
+      ],
+      [
+        "Два стартера",
+        "электрический и ручной"
       ]
     ]
   }
