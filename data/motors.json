@@ -3451,7 +3451,7 @@
     "id": "m1789503887",
     "brand": "yamaha",
     "brandLabel": "Yamaha",
-    "title": "Yamaha F30 EFI (S), гидравлика, пульт управления",
+    "title": "Yamaha F30 EFI (S), гидравлика, пульт управления (1004981)",
     "price": 490000,
     "img": "/media/motors/m1789503887/photo1.jpg",
     "photos": [
@@ -3487,6 +3487,24 @@
         "url": "/media/motors/m1789503887/video/v20260915_7d0ffef2.mp4",
         "poster": "/media/motors/m1789503887/video/poster/v20260915_7d0ffef2.jpg",
         "duration": 169
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1789503887/video/v20260916_fb1ce6ca.mp4",
+        "poster": "/media/motors/m1789503887/video/poster/v20260916_fb1ce6ca.jpg",
+        "duration": 29
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1789503887/video/v20260916_ef64d06a.mp4",
+        "poster": "/media/motors/m1789503887/video/poster/v20260916_ef64d06a.jpg",
+        "duration": 26
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1789503887/video/v20260916_6d760087.mp4",
+        "poster": "/media/motors/m1789503887/video/poster/v20260916_6d760087.jpg",
+        "duration": 27
       }
     ],
     "specs": [
@@ -3550,9 +3568,9 @@
     ],
     "videos": [
       {
-        "label": "Давление масла.mp4",
-        "url": "/media/motors/m1789504087128/video/v20260915_8649ec99.mp4",
-        "poster": "/media/motors/m1789504087128/video/poster/v20260915_8649ec99.jpg",
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1789504190/video/v20260916_908f3158.mp4",
+        "poster": "/media/motors/m1789504190/video/poster/v20260916_908f3158.jpg",
         "duration": 161
       },
       {
@@ -3566,6 +3584,12 @@
         "url": "/media/motors/m1789504087128/video/v20260915_f87ffae4.mp4",
         "poster": "/media/motors/m1789504087128/video/poster/v20260915_f87ffae4.jpg",
         "duration": 29
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1789504087128/video/v20260915_8649ec99.mp4",
+        "poster": "/media/motors/m1789504087128/video/poster/v20260915_8649ec99.jpg",
+        "duration": 161
       }
     ],
     "specs": [
@@ -3612,6 +3636,103 @@
       [
         "Два стартера",
         "электрический и ручной"
+      ]
+    ]
+  },
+  {
+    "id": "m1789583673",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F40 EFI (S), гидроподъем, пульт управления",
+    "price": 490000,
+    "img": "/media/motors/m1789583673/photo1.jpg",
+    "photos": [
+      "/media/motors/m1789583673/photo1.jpg",
+      "/media/motors/m1789583673/photo2.jpg",
+      "/media/motors/m1789583673/photo3.jpg",
+      "/media/motors/m1789583673/photo4.jpg",
+      "/media/motors/m1789583673/photo5.jpg",
+      "/media/motors/m1789583673/photo6.jpg",
+      "/media/motors/m1789583673/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_4b3226b6.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_4b3226b6.jpg",
+        "duration": 64
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_a5470e6f.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_a5470e6f.jpg",
+        "duration": 176
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_e2fffb58.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_e2fffb58.jpg",
+        "duration": 28
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_cfcc6d87.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_cfcc6d87.jpg",
+        "duration": 27
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_87afd38a.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_87afd38a.jpg",
+        "duration": 28
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1789583624765/video/v20260916_7791aa8e.mp4",
+        "poster": "/media/motors/m1789583624765/video/poster/v20260916_7791aa8e.jpg",
+        "duration": 50
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2017"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "672 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
       ]
     ]
   }
