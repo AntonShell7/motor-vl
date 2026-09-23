@@ -114,6 +114,39 @@
               </div>
           </div>
 
+          <div class="form-row">
+            <label for="fieldRegion">Из какого вы региона?</label>
+            <!-- Подсказки списком, но поле обычное: можно выбрать из готовых,
+                 а можно вписать своё — регионов почти сотня, выпадающий список
+                 такой длины на телефоне листать мучительно. -->
+            <input class="form-control" type="text" id="fieldRegion" name="region"
+                   list="regionOptions" placeholder="Приморский край"
+                   autocomplete="address-level1" maxlength="120" required>
+            <datalist id="regionOptions">
+              <option value="Приморский край"></option>
+              <option value="Хабаровский край"></option>
+              <option value="Сахалинская область"></option>
+              <option value="Амурская область"></option>
+              <option value="Камчатский край"></option>
+              <option value="Магаданская область"></option>
+              <option value="Еврейская АО"></option>
+              <option value="Забайкальский край"></option>
+              <option value="Республика Саха (Якутия)"></option>
+              <option value="Иркутская область"></option>
+              <option value="Красноярский край"></option>
+              <option value="Новосибирская область"></option>
+              <option value="Свердловская область"></option>
+              <option value="Москва"></option>
+              <option value="Московская область"></option>
+              <option value="Санкт-Петербург"></option>
+              <option value="Краснодарский край"></option>
+              <option value="Ростовская область"></option>
+              <option value="Республика Татарстан"></option>
+              <option value="Беларусь"></option>
+              <option value="Казахстан"></option>
+            </datalist>
+          </div>
+
           <fieldset class="pick pick--contact" data-key="messenger" data-label="Мессенджеры">
               <legend class="pick__legend">Где вам удобно общаться?</legend>
               <div class="pick__options">
@@ -293,8 +326,8 @@
 
 <button class="back-to-top" aria-label="Наверх">↑</button>
 
-<script src="js/order.js?v=940a9b4f"></script>
+<script src="js/order.js?v=2ae9e528"></script>
 <script src="js/main.js?v=76c16ed2"></script>
-<!-- сборка 565162565b2a ~~~~~~~~~~~ -->
+<!-- сборка 5ff6186157ee ~~~~~~~~~~~~~~~ -->
 </body>
 </html>

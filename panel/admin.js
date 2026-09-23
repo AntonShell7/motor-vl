@@ -927,6 +927,7 @@
             '<div class="admin-lead__date">' + formatDate(l.createdAt) + "</div>" +
           "</div>" +
           '<div class="admin-lead__row">📞 <a href="tel:' + l.phone + '">' + l.phone + "</a></div>" +
+          (l.region ? '<div class="admin-lead__row">📍 ' + escapeAttr(l.region) + "</div>" : "") +
           (l.messengers && l.messengers.length
             ? '<div class="admin-lead__row">💬 ' + l.messengers.join(", ") + "</div>"
             : "") +

@@ -177,6 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
         website: trap ? trap.value : "",
         name: document.getElementById("fieldName").value,
         phone: fullPhone,
+        // Регион нужен, чтобы сразу считать доставку и не перезванивать
+        // с этим вопросом отдельно.
+        region: (document.getElementById("fieldRegion") || {}).value || "",
         messengers: messengers,
         // В motor кладём готовую строку — она сразу видна менеджеру в списке заявок,
         // а spec уходит рядом, чтобы позже можно было фильтровать заявки по параметрам.

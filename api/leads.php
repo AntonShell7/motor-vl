@@ -82,6 +82,9 @@ function telegram_text(array $lead): string
     // Телефон отдельной строкой без разметки: в мобильном Telegram он сам
     // становится ссылкой, по которой можно позвонить одним касанием.
     $lines[] = '📞 ' . $esc($lead['phone']);
+    if (!empty($lead['region'])) {
+        $lines[] = '📍 ' . $esc($lead['region']);
+    }
     if (!empty($lead['messengers'])) {
         $lines[] = '💬 ' . $esc(implode(', ', $lead['messengers']));
     }
@@ -191,6 +194,7 @@ if ($method === 'POST') {
             'id' => 'l' . time() . random_int(100, 999),
             'name' => mb_substr($name, 0, 200),
             'phone' => mb_substr($phone, 0, 50),
+            'region' => mb_substr(trim((string) ($payload['region'] ?? '')), 0, 120),
             'messengers' => array_values(array_filter(
                 is_array($payload['messengers'] ?? null) ? $payload['messengers'] : [],
                 'is_string'
