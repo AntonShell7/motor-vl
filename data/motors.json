@@ -3070,101 +3070,6 @@
     ]
   },
   {
-    "id": "m1788795763",
-    "brand": "yamaha",
-    "brandLabel": "Yamaha",
-    "title": "Yamaha F25 (S), гидравлика, пульт управления (1040434)",
-    "price": 350000,
-    "img": "/media/motors/m1788795763/photo1.jpg",
-    "photos": [
-      "/media/motors/m1788795763/photo1.jpg",
-      "/media/motors/m1788795763/photo2.jpg",
-      "/media/motors/m1788795763/photo3.jpg",
-      "/media/motors/m1788795763/photo4.jpg",
-      "/media/motors/m1788795763/photo5.jpg",
-      "/media/motors/m1788795763/photo6.jpg",
-      "/media/motors/m1788795763/photo7.jpg"
-    ],
-    "videos": [
-      {
-        "label": "Запуск двигателя.mp4",
-        "url": "/media/motors/m1788795725174/video/v20260907_f5f8ca55.mp4",
-        "poster": "/media/motors/m1788795725174/video/poster/v20260907_f5f8ca55.jpg",
-        "duration": 176
-      },
-      {
-        "label": "Давление масла.mp4",
-        "url": "/media/motors/m1788795725174/video/v20260907_8c9b8df9.mp4",
-        "poster": "/media/motors/m1788795725174/video/poster/v20260907_8c9b8df9.jpg",
-        "duration": 65
-      },
-      {
-        "label": "Компрессия 1 цилиндр.mp4",
-        "url": "/media/motors/m1788795725174/video/v20260907_bed2f748.mp4",
-        "poster": "/media/motors/m1788795725174/video/poster/v20260907_bed2f748.jpg",
-        "duration": 43
-      },
-      {
-        "label": "Компрессия 2 цилиндр.mp4",
-        "url": "/media/motors/m1788795725174/video/v20260907_6f6ea0f0.mp4",
-        "poster": "/media/motors/m1788795725174/video/poster/v20260907_6f6ea0f0.jpg",
-        "duration": 23
-      },
-      {
-        "label": "Проверка гидроподъема.mp4",
-        "url": "/media/motors/m1788795725174/video/v20260907_9c5c6cd6.mp4",
-        "poster": "/media/motors/m1788795725174/video/poster/v20260907_9c5c6cd6.jpg",
-        "duration": 45
-      }
-    ],
-    "specs": [
-      [
-        "Год",
-        "2020"
-      ],
-      [
-        "Состояние",
-        "б/у"
-      ],
-      [
-        "Тактность",
-        "4-тактный"
-      ],
-      [
-        "Длина ноги",
-        "S (381 мм)"
-      ],
-      [
-        "Подъем",
-        "гидравлический"
-      ],
-      [
-        "Компрессия",
-        ""
-      ],
-      [
-        "Наработка",
-        ""
-      ],
-      [
-        "Управление",
-        "дистанционное"
-      ],
-      [
-        "Комплект",
-        "машинка управления"
-      ],
-      [
-        "Возможность увеличения мощности",
-        ""
-      ],
-      [
-        "Два стартера",
-        "электрический и ручной"
-      ]
-    ]
-  },
-  {
     "id": "m1788861927",
     "brand": "yamaha",
     "brandLabel": "Yamaha",
@@ -3644,6 +3549,110 @@
       [
         "Комплект",
         "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1790162929",
+    "brand": "suzuki",
+    "brandLabel": "Suzuki",
+    "title": "Suzuki DF 115 (X) (310529)",
+    "price": 530000,
+    "img": "/media/motors/m1790162929/photo1.jpg",
+    "photos": [
+      "/media/motors/m1790162929/photo1.jpg",
+      "/media/motors/m1790162929/photo2.jpg",
+      "/media/motors/m1790162929/photo3.jpg",
+      "/media/motors/m1790162929/photo4.jpg",
+      "/media/motors/m1790162929/photo5.jpg",
+      "/media/motors/m1790162929/photo6.jpg",
+      "/media/motors/m1790162929/photo7.jpg",
+      "/media/motors/m1790162929/photo8.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_377e0777.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_377e0777.jpg",
+        "duration": 181
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_237e0f68.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_237e0f68.jpg",
+        "duration": 78
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_ada1f14d.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_ada1f14d.jpg",
+        "duration": 25
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_4045314f.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_4045314f.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_3dc73f2b.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_3dc73f2b.jpg",
+        "duration": 23
+      },
+      {
+        "label": "Компрессия 4 цилиндр.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_8ce98894.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_8ce98894.jpg",
+        "duration": 23
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1790162902645/video/v20260923_0fa8793b.mp4",
+        "poster": "/media/motors/m1790162902645/video/poster/v20260923_0fa8793b.jpg",
+        "duration": 48
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2012"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "X (635 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "173 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "без комплекта"
       ],
       [
         "Возможность увеличения мощности",
