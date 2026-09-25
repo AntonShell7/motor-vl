@@ -3659,5 +3659,101 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1790240243",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F25 (S), гидроподъем, пульт управления (1039099)",
+    "price": 350000,
+    "img": "/media/motors/m1790240243/photo1.jpg",
+    "photos": [
+      "/media/motors/m1790240243/photo1.jpg",
+      "/media/motors/m1790240243/photo2.jpg",
+      "/media/motors/m1790240243/photo3.jpg",
+      "/media/motors/m1790240243/photo4.jpg",
+      "/media/motors/m1790240243/photo5.jpg",
+      "/media/motors/m1790240243/photo6.jpg",
+      "/media/motors/m1790240243/photo7.jpg",
+      "/media/motors/m1790240243/photo8.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1790240209656/video/v20260924_90205144.mp4",
+        "poster": "/media/motors/m1790240209656/video/poster/v20260924_90205144.jpg",
+        "duration": 186
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1790240209656/video/v20260924_feacda13.mp4",
+        "poster": "/media/motors/m1790240209656/video/poster/v20260924_feacda13.jpg",
+        "duration": 68
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1790240209656/video/v20260924_e95a3ffe.mp4",
+        "poster": "/media/motors/m1790240209656/video/poster/v20260924_e95a3ffe.jpg",
+        "duration": 34
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1790240209656/video/v20260924_0e39a248.mp4",
+        "poster": "/media/motors/m1790240209656/video/poster/v20260924_0e39a248.jpg",
+        "duration": 45
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1790240209656/video/v20260924_eeb4594c.mp4",
+        "poster": "/media/motors/m1790240209656/video/poster/v20260924_eeb4594c.jpg",
+        "duration": 49
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2019"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "14/14"
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "пульт управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ],
+      [
+        "Мультирумпель",
+        "Есть возможность установить вместо машинки управления мультирумпель"
+      ]
+    ]
   }
 ]
