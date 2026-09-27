@@ -239,7 +239,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // На видео приближение отключено: кадр и так во весь экран, а увеличение
     // мыльного видео только портит картинку.
+    //
+    // На телефоне приближения нет вовсе. Палец легко задевает фотографию,
+    // она уезжает в сторону, и вернуть её в исходный вид человеку постарше
+    // неочевидно — а именно такие у нас покупатели. Экран узкий, фотография
+    // занимает его целиком, приближать нечего.
+    var smallScreen = window.matchMedia("(max-width: 760px)");
     function zoomAllowed() {
+      if (smallScreen.matches) return false;
       return !stage.classList.contains("video-mode");
     }
 

@@ -2408,10 +2408,43 @@ footer.site-footer .container { max-width: 1360px; }
   .lightbox { padding: 58px 0 0; }
   .lightbox__box { height: calc(100vh - 58px); max-height: calc(100vh - 58px); border-radius: 0; }
   .lightbox__stage { padding: 8px; }
-  .lightbox__panel { max-height: 46vh; padding: 12px 16px 16px; }
+  .lightbox__panel { max-height: 50vh; padding: 12px 16px 16px; }
   .lightbox__nav { width: 40px; height: 40px; font-size: 22px; }
   .lightbox__zoom-hint { display: none; }
-  .lightbox__videos-list { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  /* Увеличение на телефоне убрано совсем. Полоса «+ − сброс» занимала место
+     над фотографией, а случайное касание увеличивало картинку — вернуть её
+     обратно человеку постарше неочевидно. Экран узкий, фото и так во всю
+     ширину: приближать нечего. */
+  .lightbox__zoom { display: none; }
+  .lightbox__stage img { cursor: default; }
+
+  /* Ролики сеткой в три колонки, а не лентой с прокруткой вбок.
+     Прежнее правило меняло только число колонок, но раскладка оставалась
+     «в строку»: на экран попадало два с половиной ролика, и клиенты не
+     догадывались листать вбок — звонили и спрашивали, почему видео три,
+     когда на самом деле четыре. Теперь видно все сразу. */
+  .lightbox__videos-list {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    gap: 8px 6px;
+    overflow-x: visible;
+  }
+  .lightbox__video-name { font-size: 11px; line-height: 1.25; }
+  /* Отступы подрезаны, чтобы второй ряд роликов помещался целиком:
+     ради 30 лишних пикселей не стоит заставлять человека прокручивать. */
+  .lightbox__videos-title { margin-bottom: 6px; }
+  .lightbox__thumbs { margin-bottom: 8px; }
+  .lightbox__video-play { width: 30px; height: 30px; font-size: 12px; }
+
+  /* Миниатюры фотографий — тоже сеткой: помещаются все, без прокрутки. */
+  .lightbox__thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    gap: 6px;
+    overflow-x: visible;
+  }
+  .lightbox__thumb { width: auto; height: auto; aspect-ratio: 1 / 1; }
 
   /* Декоративные крупные флаги и водяные знаки — убираем на мобильных, чтобы не перекрывали текст */
   .flag-emoji { display: none; }
