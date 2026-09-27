@@ -2445,6 +2445,11 @@ footer.site-footer .container { max-width: 1360px; }
     gap: 8px 6px;
     overflow-x: visible;
   }
+  /* Кнопка «скопировать ссылку» на телефоне поменьше: надпись остаётся
+     читаемой, а освободившаяся высота уходит фотографии и роликам. */
+  .lightbox__share { margin: 6px 0 10px; }
+  .lightbox__share-btn { font-size: 12px; padding: 7px 13px; }
+
   .lightbox__video-name { font-size: 11px; line-height: 1.25; }
   /* Отступы подрезаны, чтобы второй ряд роликов помещался целиком:
      ради 30 лишних пикселей не стоит заставлять человека прокручивать. */
