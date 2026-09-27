@@ -629,6 +629,37 @@ document.addEventListener("DOMContentLoaded", function () {
         hintTimer = setTimeout(hideHint, 4000);
       }
       lightbox.classList.add("open");
+      lockPage();
+    }
+
+    // Пока окно открыто, страницу под ним нужно держать на месте. Иначе палец,
+    // дойдя до конца списка роликов, продолжает движение и листает каталог
+    // позади: внизу видно, как уезжают карточки, а окно стоит на месте —
+    // человек не понимает, что происходит.
+    //
+    // Одного overflow: hidden телефонам мало — Safari всё равно тянет страницу.
+    // Поэтому страницу фиксируем и запоминаем, где стояли, чтобы при закрытии
+    // вернуть ровно на то же место, а не выбросить наверх каталога.
+    var savedScrollY = 0;
+
+    function lockPage() {
+      if (document.body.classList.contains("body-locked")) return;
+      savedScrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = "-" + savedScrollY + "px";
+      document.body.classList.add("body-locked");
+    }
+
+    function unlockPage() {
+      if (!document.body.classList.contains("body-locked")) return;
+      document.body.classList.remove("body-locked");
+      document.body.style.top = "";
+      // Плавная прокрутка здесь не нужна: страница должна просто оказаться
+      // там, где была, без поездки через весь каталог.
+      var root = document.documentElement;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, savedScrollY);
+      root.style.scrollBehavior = prev;
     }
 
     // Ссылка с мотором: открываем его окно сразу, без лишних нажатий.
@@ -645,9 +676,18 @@ document.addEventListener("DOMContentLoaded", function () {
           // вести туда, откуда он пришёл, а не закрывать окно на месте.
           urlHasMotor = true;
           pushedEntry = false;
-          openWith(trigger);
+          // Сначала подводим каталог к нужной карточке и только потом
+          // открываем окно: страница под ним фиксируется, и после закрытия
+          // человек остаётся у своего мотора, а не наверху списка.
           var card = trigger.closest(".motor-card");
-          if (card) card.scrollIntoView({ block: "center" });
+          if (card) {
+            var root = document.documentElement;
+            var prevBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = "auto";
+            card.scrollIntoView({ block: "center" });
+            root.style.scrollBehavior = prevBehavior;
+          }
+          openWith(trigger);
         } else if (++tries > 40) {
           clearInterval(timer);
         }
@@ -664,6 +704,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pushedEntry = false;
         stopVideo();
         lightbox.classList.remove("open");
+        unlockPage();
       }
     });
 
@@ -685,6 +726,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeLightbox() {
       stopVideo();
       lightbox.classList.remove("open");
+      unlockPage();
       forgetMotorInUrl();
     }
     closeBtn.addEventListener("click", closeLightbox);

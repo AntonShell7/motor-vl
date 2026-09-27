@@ -984,9 +984,21 @@ nav.main-nav a.active {
 .motor-card__actions .btn { flex: 1; font-size: 16px; padding: 14px 18px; min-height: 48px; }
 
 /* Lightbox: фотогалерея + список видео */
+/* Страница под открытым окном не должна прокручиваться. */
+body.body-locked {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
+  /* Прокрутка не «перетекает» на страницу позади, когда список внутри
+     дошёл до края. */
+  overscroll-behavior: contain;
   background: rgba(5, 15, 28, 0.97);
   display: none;
   align-items: center;
@@ -1166,6 +1178,7 @@ nav.main-nav a.active {
      были видны целиком, а не обрезались. Нужно всё место под фото —
      кнопка «Во весь экран» убирает панель совсем. */
   max-height: 36vh;
+  overscroll-behavior: contain;
 }
 
 /* Режим «во весь экран»: панель убирается, сцена занимает весь лайтбокс. */
@@ -1197,6 +1210,7 @@ nav.main-nav a.active {
   margin-bottom: 14px;
   padding-bottom: 4px;
   scrollbar-width: thin;
+  overscroll-behavior: contain;
 }
 .lightbox__thumb {
   width: 50px; height: 50px;
@@ -1229,6 +1243,7 @@ nav.main-nav a.active {
   overflow-x: auto;
   padding-bottom: 4px;
   scrollbar-width: thin;
+  overscroll-behavior: contain;
 }
 .lightbox__video-tile {
   border: 0;
