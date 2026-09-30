@@ -3509,5 +3509,102 @@
         "Есть возможность установить вместо машинки управления мультирумпель"
       ]
     ]
+  },
+  {
+    "id": "m1790672584",
+    "brand": "honda",
+    "brandLabel": "Honda",
+    "title": "Honda BF50 (S), гидроподъем, румпель (3400151)",
+    "price": 310000,
+    "img": "/media/motors/m1790672584/photo4.jpg",
+    "photos": [
+      "/media/motors/m1790672584/photo1.jpg",
+      "/media/motors/m1790672584/photo2.jpg",
+      "/media/motors/m1790672584/photo3.jpg",
+      "/media/motors/m1790672584/photo4.jpg",
+      "/media/motors/m1790672584/photo5.jpg",
+      "/media/motors/m1790672584/photo6.jpg",
+      "/media/motors/m1790672584/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_066bcc69.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_066bcc69.jpg",
+        "duration": 73
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_b2a2b226.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_b2a2b226.jpg",
+        "duration": 137
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_a009df66.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_a009df66.jpg",
+        "duration": 32
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_54ac1c67.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_54ac1c67.jpg",
+        "duration": 33
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_2be080ac.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_2be080ac.jpg",
+        "duration": 33
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1790672402954/video/v20260929_f1818530.mp4",
+        "poster": "/media/motors/m1790672402954/video/poster/v20260929_f1818530.jpg",
+        "duration": 51
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2006"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "14/14/14"
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "румпельное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
