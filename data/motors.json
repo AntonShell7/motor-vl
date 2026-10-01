@@ -3606,5 +3606,102 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1788861927",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F30 EFI (S), гидравлика, пульт управления (1004353)",
+    "price": 480000,
+    "img": "/media/motors/m1788861927/photo3.jpg",
+    "photos": [
+      "/media/motors/m1788861927/photo1.jpg",
+      "/media/motors/m1788861927/photo2.jpg",
+      "/media/motors/m1788861927/photo3.jpg",
+      "/media/motors/m1788861927/photo4.jpg",
+      "/media/motors/m1788861927/photo5.jpg",
+      "/media/motors/m1788861927/photo6.jpg",
+      "/media/motors/m1788861927/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_5ab674c4.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_5ab674c4.jpg",
+        "duration": 73
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_94fa9d80.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_94fa9d80.jpg",
+        "duration": 169
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_6f66ec5e.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_6f66ec5e.jpg",
+        "duration": 25
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_80d34594.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_80d34594.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_e48926f6.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_e48926f6.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1788861927/video/v20260930_74d78aa5.mp4",
+        "poster": "/media/motors/m1788861927/video/poster/v20260930_74d78aa5.jpg",
+        "duration": 46
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2021"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "589 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
