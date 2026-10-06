@@ -80,87 +80,6 @@
   {
     "brand": "yamaha",
     "brandLabel": "Yamaha",
-    "title": "Yamaha F25 (S), гидравлика, пульт управления (1042495)",
-    "price": 250000,
-    "img": "/media/37/images/thumb/eFiTTmsZ.png",
-    "photos": [
-      "/media/37/images/thumb/8JSYt5Pn.png",
-      "/media/37/images/thumb/eFiTTmsZ.png",
-      "/media/37/images/thumb/qgXTODQQ.png",
-      "/media/37/images/thumb/ITF5Bfbl.png",
-      "/media/37/images/thumb/boD9QQwa.png",
-      "/media/37/images/thumb/7Eh13tpt.png",
-      "/media/37/images/thumb/yzYtUdxn.png"
-    ],
-    "videos": [
-      {
-        "label": "Запуск двигателя",
-        "url": "/media/37/video/4-5sOnWp.mp4"
-      },
-      {
-        "label": "Компрессия 1 цилиндр",
-        "url": "/media/37/video/VlR_9_-M.mp4"
-      },
-      {
-        "label": "Компрессия 2 цилиндр",
-        "url": "/media/37/video/-vMIl-DI.mp4"
-      },
-      {
-        "label": "Давление масла",
-        "url": "/media/37/video/9bbMXtNq.mp4"
-      },
-      {
-        "label": "Прооверка гидроподъема",
-        "url": "/media/37/video/5Nh1QrPt.mp4"
-      }
-    ],
-    "specs": [
-      [
-        "Год",
-        "2008"
-      ],
-      [
-        "Состояние",
-        "б/у"
-      ],
-      [
-        "Тактность",
-        "4-тактный"
-      ],
-      [
-        "Длина ноги",
-        "S (381 мм)"
-      ],
-      [
-        "Подъем",
-        "гидравлический"
-      ],
-      [
-        "Компрессия",
-        "15/15"
-      ],
-      [
-        "Наработка",
-        ""
-      ],
-      [
-        "Управление",
-        "дистанционное"
-      ],
-      [
-        "Комплект",
-        "продаётся с машинкой"
-      ],
-      [
-        "Возможность увеличения мощности",
-        ""
-      ]
-    ],
-    "id": "m37"
-  },
-  {
-    "brand": "yamaha",
-    "brandLabel": "Yamaha",
     "title": "Yamaha F60 (L), гидравлика, пульт управления (1044089)",
     "price": 370000,
     "img": "/media/103/images/thumb/3gOvJDFx.jpeg",
@@ -966,11 +885,11 @@
     "id": "m50"
   },
   {
+    "id": "m100",
     "brand": "yamaha",
     "brandLabel": "Yamaha",
     "title": "Yamaha F40 EFI (L) НОВЫЙ МОТОР ИЗ ЯПОНИИ",
     "price": 670000,
-    "badge": "Новый",
     "img": "/media/100/images/thumb/Mqq3VMFq.jpeg",
     "photos": [
       "/media/100/images/thumb/Mqq3VMFq.jpeg",
@@ -1013,15 +932,14 @@
       ],
       [
         "Комплект",
-        "мультирумпель, топливный бак, шланг в комплекте"
+        "винт, топливный бак, шланг в комплекте"
       ],
       [
         "Возможность увеличения мощности",
         ""
       ]
     ],
-    "id": "m100",
-    "badgeColor": "gold"
+    "badge": "Новый"
   },
   {
     "brand": "yamaha",
