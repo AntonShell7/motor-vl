@@ -205,17 +205,26 @@ document.addEventListener("DOMContentLoaded", function () {
       var photos = (m.photos && m.photos.length) ? m.photos : [m.img];
       var videos = m.videos || [];
 
-      var metaChips = "";
-      if (photos.length > 1) metaChips += '<span class="motor-card__meta-chip">📷 ' + photos.length + "</span>";
-      if (videos.length) metaChips += '<span class="motor-card__meta-chip">🎬 ' + videos.length + "</span>";
-      var metaHtml = metaChips ? '<div class="motor-card__meta">' + metaChips + "</div>" : "";
+      // Раньше здесь были две маленькие плашки с цифрами — «📷 6» и «🎬 4».
+      // Покупатели принимали их за украшение и звонили спросить, где
+      // посмотреть видео: плашка сообщает, но никуда не приглашает.
+      // Теперь на их месте кнопка с глаголом — она объясняет, что карточку
+      // можно открыть, и что внутри.
+      //
+      // Это не <button>: по карточке и так открывается окно просмотра,
+      // а настоящая кнопка в разметке из этого нажатия исключена.
+      var watchLabel = videos.length ? "Смотреть фото и видео" : "Смотреть фотографии";
+      var metaHtml =
+        '<div class="motor-card__watch">' +
+          '<span class="motor-card__watch-ico">▶</span>' +
+          '<span class="motor-card__watch-text">' + watchLabel + "</span>" +
+        "</div>";
 
       return (
         dividerHtml +
         '<div class="motor-card reveal in">' +
           '<div class="motor-card__media">' +
             badgeHtml +
-            metaHtml +
             '<img src="' + m.img + '" alt="' + m.title + '" loading="lazy" ' +
               'data-lightbox="' + m.img + '" data-caption="' + m.title + '" ' +
               'data-motor-id="' + String(m.id || "").replace(/"/g, "&quot;") + '" ' +
@@ -228,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
             '<div class="motor-card__price">' + formatPrice(m.price) + "<span>Цена</span></div>" +
             (specsHtml ? '<div class="spec-list">' + specsHtml + "</div>" : "") +
           "</div>" +
+          metaHtml +
         "</div>"
       );
     }).join("");

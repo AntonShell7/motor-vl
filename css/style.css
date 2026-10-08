@@ -851,6 +851,9 @@ nav.main-nav a.active {
   transition: box-shadow .2s ease, transform .2s ease;
 }
 .motor-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+/* Кнопка «Смотреть» отсчитывается от карточки, а не от колонки с фото:
+   на телефоне она уходит широкой полосой под неё. */
+.motor-card { position: relative; }
 
 .motor-card__media {
   position: relative;
@@ -890,22 +893,41 @@ nav.main-nav a.active {
 .motor-card__badge--gold { background: var(--accent); }
 .motor-card__badge--green { background: var(--success); }
 .motor-card__badge--red { background: var(--jp-red); }
-.motor-card__meta {
+/* Кнопка «Смотреть фото и видео» внизу фотографии.
+   Фон и рамка — как у таблицы характеристик, чтобы кнопка читалась как
+   часть карточки, а не как наклейка поверх снимка. Текст тёмный: на
+   светлой плашке он заметнее белого, в том числе людям с неважным
+   зрением, а это основная наша аудитория. */
+.motor-card__watch {
   position: absolute;
+  left: 12px;
+  /* Ширина колонки с фотографией минус отступы по бокам. */
+  width: calc(42% - 24px);
   bottom: 12px;
-  right: 12px;
-  display: flex;
-  gap: 6px;
   z-index: 2;
-}
-.motor-card__meta-chip {
-  background: rgba(5,20,38,.72);
-  color: #fff;
-  font-size: 12.5px;
-  font-weight: 700;
-  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #fbf7ea 0%, #f6efd9 100%);
+  border: 1px solid rgba(212,175,55,.55);
   border-radius: 100px;
-  backdrop-filter: blur(2px);
+  padding: 12px 14px;
+  font-size: 15.5px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy-dark);
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(6,26,48,.22);
+}
+.motor-card__watch-ico {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--accent-dark, #b8952c);
+}
+.motor-card:hover .motor-card__watch {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .motor-card__body {
@@ -2417,7 +2439,24 @@ footer.site-footer .container { max-width: 1360px; }
      на кнопке бренда — «Yamaha (30)». Освободившаяся высота уходит карточкам. */
   #resultsCount { display: none; }
   .motor-card__badge { font-size: 11px; padding: 5px 10px; top: 10px; left: 10px; }
-  .motor-card__meta { bottom: 8px; right: 8px; }
+  /* Колонка с фотографией на телефоне узкая, поэтому надпись переносится
+     на две строки — это нормально, важно что она крупная и читаемая. */
+  /* Колонка с фотографией на телефоне всего около 127 пикселей — надпись
+     в ней ломалась на три строки. Поэтому кнопка уходит отдельной полосой
+     во всю ширину карточки: надпись в одну строку и крупная, а промахнуться
+     мимо такой кнопки почти невозможно. */
+  .motor-card { flex-wrap: wrap; }
+  .motor-card__watch {
+    position: static;
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 15px;
+    gap: 8px;
+    border-radius: 0;
+    border-width: 1px 0 0;
+    box-shadow: none;
+  }
+  .motor-card__watch-ico { font-size: 11px; }
   /* На узком экране окно занимает всё, поэтому крестику отводим полосу
      сверху — иначе он ложится на видео и мешает его кнопкам. */
   .lightbox { padding: 58px 0 0; }
