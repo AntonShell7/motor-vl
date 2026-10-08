@@ -213,11 +213,13 @@ document.addEventListener("DOMContentLoaded", function () {
       //
       // Это не <button>: по карточке и так открывается окно просмотра,
       // а настоящая кнопка в разметке из этого нажатия исключена.
-      var watchLabel = videos.length ? "Смотреть фото и видео" : "Смотреть фотографии";
+      // Надпись одна и та же у всех моторов, даже если роликов пока нет:
+      // их добавляют позже, и кнопка не должна менять вид у одного и того же
+      // мотора — человек запоминает её именно такой.
       var metaHtml =
         '<div class="motor-card__watch">' +
           '<span class="motor-card__watch-ico">▶</span>' +
-          '<span class="motor-card__watch-text">' + watchLabel + "</span>" +
+          '<span class="motor-card__watch-text">Смотреть фото и видео</span>' +
         "</div>";
 
       return (
