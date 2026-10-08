@@ -3532,5 +3532,89 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1791420808",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F25 (S), гидроподъем, пульт управления (1025702)",
+    "price": 250000,
+    "img": "/media/motors/m1791420808/photo1.jpg",
+    "photos": [
+      "/media/motors/m1791420808/photo1.jpg",
+      "/media/motors/m1791420808/photo2.jpg",
+      "/media/motors/m1791420808/photo3.jpg",
+      "/media/motors/m1791420808/photo4.jpg",
+      "/media/motors/m1791420808/photo5.jpg",
+      "/media/motors/m1791420808/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1791420609804/video/v20261008_dbe66692.mp4",
+        "poster": "/media/motors/m1791420609804/video/poster/v20261008_dbe66692.jpg",
+        "duration": 174
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1791420609804/video/v20261008_660c664d.mp4",
+        "poster": "/media/motors/m1791420609804/video/poster/v20261008_660c664d.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1791420609804/video/v20261008_fb0df2c7.mp4",
+        "poster": "/media/motors/m1791420609804/video/poster/v20261008_fb0df2c7.jpg",
+        "duration": 26
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1791420609804/video/v20261008_4012682b.mp4",
+        "poster": "/media/motors/m1791420609804/video/poster/v20261008_4012682b.jpg",
+        "duration": 48
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2006"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15"
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
