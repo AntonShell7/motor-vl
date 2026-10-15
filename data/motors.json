@@ -3729,5 +3729,114 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1791939396",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F70 EFI (L), гидроподъем (1113512)",
+    "price": 620000,
+    "img": "/media/motors/m1791939396/photo1.jpg",
+    "photos": [
+      "/media/motors/m1791939396/photo1.jpg",
+      "/media/motors/m1791939396/photo2.jpg",
+      "/media/motors/m1791939396/photo3.jpg",
+      "/media/motors/m1791939396/photo4.jpg",
+      "/media/motors/m1791939396/photo5.jpg",
+      "/media/motors/m1791939396/photo6.jpg",
+      "/media/motors/m1791939396/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_982d31eb.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_982d31eb.jpg",
+        "duration": 65
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_6726cceb.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_6726cceb.jpg",
+        "duration": 153
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_3bd9023a.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_3bd9023a.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_ac4256e1.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_ac4256e1.jpg",
+        "duration": 23
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_5dfb6cf5.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_5dfb6cf5.jpg",
+        "duration": 21
+      },
+      {
+        "label": "Компрессия 4 цилиндр.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_fe2b7e7a.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_fe2b7e7a.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Компьютерная диагностика.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_5daf6251.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_5daf6251.jpg",
+        "duration": 99
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1791939313266/video/v20261014_7a937eb3.mp4",
+        "poster": "/media/motors/m1791939313266/video/poster/v20261014_7a937eb3.jpg",
+        "duration": 50
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2022"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "L (508 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "349 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
