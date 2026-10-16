@@ -438,6 +438,14 @@
   // Когда что-то «просто не сохраняется», причина почти всегда на хостинге:
   // кончилось место, слетели права на папку. Раньше это выяснялось перепиской,
   // теперь — одной кнопкой, без пароля в адресной строке.
+  // Ответ любой из нижних кнопок нужно показать человеку, а не просто
+  // отрисовать: сам блок лежит внизу длинной страницы.
+  function scrollToBox(box) {
+    setTimeout(function () {
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+  }
+
   var selftestBtn = document.getElementById("selftestBtn");
   var selftestBox = document.getElementById("selftestBox");
 
@@ -445,6 +453,10 @@
     selftestBtn.addEventListener("click", function () {
       selftestBox.style.display = "block";
       selftestBox.innerHTML = '<p style="color:var(--text-muted);">Проверяем сервер…</p>';
+      // Блок с ответом стоит ниже всех разделов статистики — на телефоне он
+      // далеко за краем экрана. Без этого нажатие выглядело так, будто
+      // кнопка не работает: ответ появлялся там, где его не видно.
+      scrollToBox(selftestBox);
       fetch("/api/selftest.php?format=json", { headers: passHeader() })
         .then(function (res) {
           return res.json().then(function (data) {
@@ -538,6 +550,7 @@
     diskBtn.addEventListener("click", function () {
       diskBox.style.display = "block";
       diskBox.innerHTML = '<p style="color:var(--text-muted);">Считаем файлы, это может занять полминуты…</p>';
+      scrollToBox(diskBox);
       apiAction("diskScan", {})
         .then(function (res) { renderDisk(res, ""); })
         .catch(function (err) {
