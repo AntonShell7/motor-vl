@@ -866,64 +866,6 @@
   {
     "brand": "yamaha",
     "brandLabel": "Yamaha",
-    "title": "НОВЫЙ ЛОДОЧНЫЙ МОТОР Yamaha F60 EFI (L)",
-    "price": 720000,
-    "badge": "Новый",
-    "img": "/media/49/images/thumb/huTnmVc0.jpeg",
-    "photos": [
-      "/media/49/images/thumb/huTnmVc0.jpeg",
-      "/media/49/images/thumb/hzuWDf9y.jpeg",
-      "/media/49/images/thumb/W4-2hGjj.jpeg"
-    ],
-    "videos": [],
-    "specs": [
-      [
-        "Год",
-        "2025"
-      ],
-      [
-        "Состояние",
-        "новый"
-      ],
-      [
-        "Тактность",
-        "4-тактный"
-      ],
-      [
-        "Длина ноги",
-        "L (508 мм)"
-      ],
-      [
-        "Подъем",
-        "гидравлический"
-      ],
-      [
-        "Компрессия",
-        ""
-      ],
-      [
-        "Наработка",
-        ""
-      ],
-      [
-        "Управление",
-        "дистанционное"
-      ],
-      [
-        "Комплект",
-        ""
-      ],
-      [
-        "Возможность увеличения мощности",
-        ""
-      ]
-    ],
-    "id": "m49",
-    "badgeColor": "gold"
-  },
-  {
-    "brand": "yamaha",
-    "brandLabel": "Yamaha",
     "title": "Yamaha F130 EFI (X) (1008122)",
     "price": 780000,
     "img": "/media/62/images/thumb/XwPbk3kn.jpeg",
@@ -3641,8 +3583,8 @@
       "/media/motors/m1791626550/photo2.jpg",
       "/media/motors/m1791626550/photo3.jpg",
       "/media/motors/m1791626550/photo4.jpg",
-      "/media/motors/m1791626550/photo5.jpg",
-      "/media/motors/m1791626550/photo6.jpg",
+      "/media/motors/m1791626550/photo1.jpg",
+      "/media/motors/m1791626550/photo2.jpg",
       "/media/motors/m1791626550/photo7.jpg"
     ],
     "videos": [
@@ -3832,6 +3774,300 @@
       [
         "Комплект",
         ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1792150796",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F25, нога S, гидравлика, румпель (1040854)",
+    "price": 320000,
+    "img": "/media/motors/m1792150796/photo4.jpg",
+    "photos": [
+      "/media/motors/m1792150796/photo1.jpg",
+      "/media/motors/m1792150796/photo2.jpg",
+      "/media/motors/m1792150796/photo3.jpg",
+      "/media/motors/m1792150796/photo4.jpg",
+      "/media/motors/m1792150796/photo5.jpg",
+      "/media/motors/m1792150796/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1792150396166/video/v20261016_7b79f6c1.mp4",
+        "poster": "/media/motors/m1792150396166/video/poster/v20261016_7b79f6c1.jpg",
+        "duration": 56
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1792150396166/video/v20261016_a9203a59.mp4",
+        "poster": "/media/motors/m1792150396166/video/poster/v20261016_a9203a59.jpg",
+        "duration": 163
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1792150396166/video/v20261016_fc439cc1.mp4",
+        "poster": "/media/motors/m1792150396166/video/poster/v20261016_fc439cc1.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1792150396166/video/v20261016_40b29efa.mp4",
+        "poster": "/media/motors/m1792150396166/video/poster/v20261016_40b29efa.jpg",
+        "duration": 25
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1792150396166/video/v20261016_fd02c014.mp4",
+        "poster": "/media/motors/m1792150396166/video/poster/v20261016_fd02c014.jpg",
+        "duration": 52
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2021"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15"
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "румпельное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1787466905",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F60 EFI, (L), гидроподъем, пульт управления (1055006)",
+    "price": 450000,
+    "img": "/media/motors/m1787466905/photo1.jpg",
+    "photos": [
+      "/media/motors/m1787466905/photo1.jpg",
+      "/media/motors/m1787466905/photo2.jpg",
+      "/media/motors/m1787466905/photo3.jpg",
+      "/media/motors/m1787466905/photo4.jpg",
+      "/media/motors/m1787466905/photo5.jpg",
+      "/media/motors/m1787466905/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя",
+        "url": "/media/motors/m1787466720837/video/v20260823_e7acd842.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_e7acd842.jpg",
+        "duration": 158
+      },
+      {
+        "label": "Компрессия 1 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_e2d1c28b.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_e2d1c28b.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_5cef4041.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_5cef4041.jpg",
+        "duration": 27
+      },
+      {
+        "label": "Компрессия 3 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_575b6a26.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_575b6a26.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 4 цилиндр",
+        "url": "/media/motors/m1787466720837/video/v20260823_d3fa0336.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_d3fa0336.jpg",
+        "duration": 27
+      },
+      {
+        "label": "Давление масла",
+        "url": "/media/motors/m1787466720837/video/v20260823_7fe21ff8.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_7fe21ff8.jpg",
+        "duration": 70
+      },
+      {
+        "label": "Проверка гидроподъема",
+        "url": "/media/motors/m1787466720837/video/v20260823_69608b98.mp4",
+        "poster": "/media/motors/m1787466720837/video/poster/v20260823_69608b98.jpg",
+        "duration": 41
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2012"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "L (508 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "558 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1792158906",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F40 EFI (S), гидроподъем, машинка управления (1002429)",
+    "price": 490000,
+    "img": "/media/motors/m1792158906/photo1.jpg",
+    "photos": [
+      "/media/motors/m1792158906/photo1.jpg",
+      "/media/motors/m1792158906/photo2.jpg",
+      "/media/motors/m1792158906/photo3.jpg",
+      "/media/motors/m1792158906/photo4.jpg",
+      "/media/motors/m1792158906/photo5.jpg",
+      "/media/motors/m1792158906/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_f9d52b81.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_f9d52b81.jpg",
+        "duration": 67
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_67f41bf7.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_67f41bf7.jpg",
+        "duration": 175
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_8b5faf09.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_8b5faf09.jpg",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_5f2a51e0.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_5f2a51e0.jpg",
+        "duration": 26
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_5bd61526.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_5bd61526.jpg",
+        "duration": 24
+      },
+      {
+        "label": "Компьютерная диагностика.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_027920ab.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_027920ab.jpg",
+        "duration": 125
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1792158562967/video/v20261016_77783190.mp4",
+        "poster": "/media/motors/m1792158562967/video/poster/v20261016_77783190.jpg",
+        "duration": 55
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2020"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "425 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
       ],
       [
         "Возможность увеличения мощности",
