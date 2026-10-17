@@ -741,8 +741,8 @@ nav.main-nav a.active {
      сливались с фоном: покупатели их просто не замечали. Теперь обводка
      тёмно-синяя, в цвет выбранной вкладки, плюс лёгкая тень — кнопка
      читается как кнопка даже при неважном зрении. */
-  border: 2px solid rgba(5,20,38,.45);
-  box-shadow: 0 1px 3px rgba(5,20,38,.10);
+  border: 2.5px solid rgba(5,20,38,.8);
+  box-shadow: 0 2px 5px rgba(5,20,38,.16);
   background: #fff;
   font-weight: 700;
   font-size: 19px;
@@ -775,8 +775,8 @@ nav.main-nav a.active {
   border-radius: 100px;
   /* Тот же разговор, что и с брендами, но обводка золотистая: мощность —
      отдельный фильтр, и по цвету видно, что это другая группа кнопок. */
-  border: 2px solid rgba(184,149,44,.8);
-  box-shadow: 0 1px 3px rgba(5,20,38,.10);
+  border: 2.5px solid #b8952c;
+  box-shadow: 0 2px 5px rgba(5,20,38,.16);
   background: #fff;
   font-weight: 700;
   font-size: 16px;
@@ -2380,7 +2380,7 @@ footer.site-footer .container { max-width: 1360px; }
   .brand-tab {
     padding: 9px 6px;
     font-size: 13px;
-    border-width: 2px;
+    border-width: 2.5px;
     text-align: center;
     white-space: nowrap;
   }
@@ -2406,9 +2406,9 @@ footer.site-footer .container { max-width: 1360px; }
   .hp-filter__btn {
     padding: 9px 15px;
     font-size: 14px;
-    border-width: 2px;
-    border-color: rgba(184,149,44,.85);
-    background: rgba(212,175,55,.14);
+    border-width: 2.5px;
+    border-color: #b8952c;
+    background: rgba(212,175,55,.18);
     color: var(--navy-dark);
   }
   .hp-filter__btn.active {
