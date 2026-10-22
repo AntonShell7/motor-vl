@@ -1193,27 +1193,35 @@
     });
   }
 
-  function uploadVideo(file, index) {
-    var row = videoListEl.querySelector('.admin-video-row[data-i="' + index + '"]');
-    var progress = row ? row.querySelector(".admin-video__progress span") : null;
-    var status = row ? row.querySelector(".admin-video__status") : null;
+  // Хостинг отбивает ошибкой 403 любой запрос с файлом в обычной форме
+  // (multipart/form-data) — блокировка стоит на сервере, до нашего кода дело
+  // не доходит. Сырое тело запроса проходит свободно, поэтому ролик уходит
+  // кусками: так он ещё и не упирается в ограничение на размер запроса и в
+  // таймаут, на котором длинные загрузки срывались.
+  var CHUNK_BYTES = 4 * 1024 * 1024;
 
-    function setStatus(text) { if (status) status.textContent = text; }
+  function uploadInChunks(file, progress, setStatus) {
+    var motorId = fId.value || currentDraftId();
+    var token = String(Date.now()) + Math.random().toString(36).slice(2, 10).replace(/[^a-z0-9]/g, "");
+    var parts = Math.max(1, Math.ceil(file.size / CHUNK_BYTES));
+    var sent = 0;
 
-    setStatus("готовим обложку…");
-    return grabPoster(file).then(function (shot) {
+    function sendPart(i) {
+      var start = i * CHUNK_BYTES;
+      var blob = file.slice(start, Math.min(start + CHUNK_BYTES, file.size));
+      var url = VIDEO_UPLOAD_URL + "?mode=chunk" +
+        "&motorId=" + encodeURIComponent(motorId) +
+        "&upload=" + encodeURIComponent(token) +
+        "&part=" + i + (i === parts - 1 ? "&last=1" : "");
+
       return new Promise(function (resolve, reject) {
-        var form = new FormData();
-        form.append("password", password());
-        form.append("motorId", fId.value || currentDraftId());
-        form.append("video", file, file.name);
-        if (shot && shot.poster) form.append("poster", shot.poster);
-
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", VIDEO_UPLOAD_URL);
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Content-Type", "application/octet-stream");
+        xhr.setRequestHeader("x-admin-password", encodeURIComponent(password()));
         xhr.upload.addEventListener("progress", function (e) {
           if (!e.lengthComputable) return;
-          var percent = Math.round((e.loaded / e.total) * 100);
+          var percent = Math.min(100, Math.round(((sent + e.loaded) / file.size) * 100));
           if (progress) progress.style.width = percent + "%";
           setStatus("загрузка " + percent + "%");
         });
@@ -1224,10 +1232,45 @@
             reject(new Error(data.error || "ошибка загрузки"));
             return;
           }
-          resolve({ url: data.url, poster: data.poster || "", duration: shot ? shot.duration : 0 });
+          sent += blob.size;
+          resolve(data);
         });
         xhr.addEventListener("error", function () { reject(new Error("нет связи с сервером")); });
-        xhr.send(form);
+        xhr.send(blob);
+      });
+    }
+
+    // Куски идут по очереди: параллельная отправка на дешёвом хостинге
+    // чаще мешает, чем помогает, а порядок здесь важен — файл дописывается.
+    var chain = Promise.resolve();
+    for (var i = 0; i < parts; i++) {
+      chain = chain.then(function (n) {
+        return function () { return sendPart(n); };
+      }(i));
+    }
+    return chain;
+  }
+
+  function uploadVideo(file, index) {
+    var row = videoListEl.querySelector('.admin-video-row[data-i="' + index + '"]');
+    var progress = row ? row.querySelector(".admin-video__progress span") : null;
+    var status = row ? row.querySelector(".admin-video__status") : null;
+
+    function setStatus(text) { if (status) status.textContent = text; }
+
+    setStatus("готовим обложку…");
+    return grabPoster(file).then(function (shot) {
+      return uploadInChunks(file, progress, setStatus).then(function (data) {
+        var duration = shot ? shot.duration : 0;
+        if (!shot || !shot.poster) {
+          return { url: data.url, poster: "", duration: duration };
+        }
+        // Обложка уходит отдельным запросом: вместе с роликом её теперь
+        // не отправить — это была та же самая форма с файлом.
+        setStatus("сохраняем обложку…");
+        return savePoster(data.url, shot.poster).then(function (poster) {
+          return { url: data.url, poster: poster || "", duration: duration };
+        });
       });
     });
   }
@@ -1355,13 +1398,20 @@
   }
 
   function savePoster(videoUrl, posterData) {
-    var form = new FormData();
-    form.append("password", password());
-    form.append("action", "poster");
-    form.append("motorId", fId.value || currentDraftId());
-    form.append("name", videoUrl.split("/").pop());
-    form.append("poster", posterData);
-    return fetch(VIDEO_UPLOAD_URL, { method: "POST", body: form })
+    // Тоже без формы: JSON хостинг пропускает, форму с файлом — нет.
+    var body = JSON.stringify({
+      motorId: fId.value || currentDraftId(),
+      name: videoUrl.split("/").pop(),
+      poster: posterData
+    });
+    return fetch(VIDEO_UPLOAD_URL + "?mode=poster", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-password": encodeURIComponent(password())
+      },
+      body: body
+    })
       .then(function (res) { return res.json(); })
       .then(function (data) { return data && data.poster ? data.poster : ""; })
       .catch(function () { return ""; });
