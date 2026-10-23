@@ -4074,5 +4074,195 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1792631730",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F40 EFI (S), гидроподъем, пульт управления (1002438)",
+    "price": 480000,
+    "img": "/media/motors/m1792631730/photo1.jpg",
+    "photos": [
+      "/media/motors/m1792631730/photo1.jpg",
+      "/media/motors/m1792631730/photo2.jpg",
+      "/media/motors/m1792631730/photo3.jpg",
+      "/media/motors/m1792631730/photo4.jpg",
+      "/media/motors/m1792631730/photo5.jpg",
+      "/media/motors/m1792631730/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_d8c94cb1.mp4",
+        "poster": "",
+        "duration": 63
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_2325e704.mp4",
+        "poster": "",
+        "duration": 191
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_07b2dfd3.mp4",
+        "poster": "",
+        "duration": 30
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_8ffa65d2.mp4",
+        "poster": "",
+        "duration": 26
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_a0d5d6f0.mp4",
+        "poster": "",
+        "duration": 28
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1792631730/video/v20261022_394dcec6.mp4",
+        "poster": "",
+        "duration": 43
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2020"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15"
+      ],
+      [
+        "Наработка",
+        "342 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "пульт управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1792637384",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F25 (S), гидроподъем, румпель (1041933)",
+    "price": 260000,
+    "img": "/media/motors/m1792637384/photo1.jpg",
+    "photos": [
+      "/media/motors/m1792637384/photo1.jpg",
+      "/media/motors/m1792637384/photo2.jpg",
+      "/media/motors/m1792637384/photo3.jpg",
+      "/media/motors/m1792637384/photo4.jpg",
+      "/media/motors/m1792637384/photo5.jpg",
+      "/media/motors/m1792637384/photo6.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1792637384/video/v20261022_06c199db.mp4",
+        "poster": "",
+        "duration": 176
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1792637384/video/v20261022_f53ae752.mp4",
+        "poster": "",
+        "duration": 33
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1792637384/video/v20261022_f34ff82b.mp4",
+        "poster": "",
+        "duration": 27
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1792637384/video/v20261022_7d5dd2fa.mp4",
+        "poster": "",
+        "duration": 59
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1792637384/video/v20261022_b4be4302.mp4",
+        "poster": "",
+        "duration": 51
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2008"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "S (381 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15"
+      ],
+      [
+        "Наработка",
+        ""
+      ],
+      [
+        "Управление",
+        "румпельное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ],
+      [
+        "Можно переделать под дистанционное управление",
+        ""
+      ]
+    ]
   }
 ]
