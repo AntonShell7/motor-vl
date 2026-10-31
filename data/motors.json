@@ -4168,5 +4168,212 @@
         ""
       ]
     ]
+  },
+  {
+    "id": "m1793349434",
+    "brand": "yamaha",
+    "brandLabel": "Yamaha",
+    "title": "Yamaha F50 EFI (L), гидроподъем, пульт управления (1049714)",
+    "price": 460000,
+    "img": "/media/motors/m1793349434/photo1.jpg",
+    "photos": [
+      "/media/motors/m1793349434/photo1.jpg",
+      "/media/motors/m1793349434/photo2.jpg",
+      "/media/motors/m1793349434/photo3.jpg",
+      "/media/motors/m1793349434/photo4.jpg",
+      "/media/motors/m1793349434/photo5.jpg",
+      "/media/motors/m1793349434/photo6.jpg",
+      "/media/motors/m1793349434/photo7.jpg",
+      "/media/motors/m1793349434/photo8.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_496a9cbe.mp4",
+        "poster": "",
+        "duration": 29
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_796ed837.mp4",
+        "poster": "",
+        "duration": 22
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_1374bf4d.mp4",
+        "poster": "",
+        "duration": 25
+      },
+      {
+        "label": "Компрессия 4 цилиндр.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_c7a3205c.mp4",
+        "poster": "",
+        "duration": 24
+      },
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_d8b5c81f.mp4",
+        "poster": "",
+        "duration": 64
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1793346855644/video/v20261030_c60f34b4.mp4",
+        "poster": "",
+        "duration": 44
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1793349434/video/v20261030_061cb846.mp4",
+        "poster": "",
+        "duration": 175
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2012"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "L (508 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "378 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        "машинка управления"
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
+  },
+  {
+    "id": "m1793351910",
+    "brand": "suzuki",
+    "brandLabel": "Suzuki",
+    "title": "Suzuki DF90A (L), гидроподъем (410206)",
+    "price": 550000,
+    "img": "/media/motors/m1793351910/photo1.jpg",
+    "photos": [
+      "/media/motors/m1793351910/photo1.jpg",
+      "/media/motors/m1793351910/photo2.jpg",
+      "/media/motors/m1793351910/photo3.jpg",
+      "/media/motors/m1793351910/photo4.jpg",
+      "/media/motors/m1793351910/photo5.jpg",
+      "/media/motors/m1793351910/photo6.jpg",
+      "/media/motors/m1793351910/photo7.jpg"
+    ],
+    "videos": [
+      {
+        "label": "Давление масла.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_fad4b6ff.mp4",
+        "poster": "",
+        "duration": 94
+      },
+      {
+        "label": "Запуск двигателя.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_0852440e.mp4",
+        "poster": "",
+        "duration": 170
+      },
+      {
+        "label": "Компрессия 1 цилиндр.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_f0dc9aa1.mp4",
+        "poster": "",
+        "duration": 34
+      },
+      {
+        "label": "Компрессия 2 цилиндр.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_c79a3f14.mp4",
+        "poster": "",
+        "duration": 29
+      },
+      {
+        "label": "Компрессия 3 цилиндр.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_5d186a60.mp4",
+        "poster": "",
+        "duration": 26
+      },
+      {
+        "label": "Компрессия 4 цилиндр.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_b559ab17.mp4",
+        "poster": "",
+        "duration": 35
+      },
+      {
+        "label": "Проверка гидроподъема.mp4",
+        "url": "/media/motors/m1793351639091/video/v20261030_e7ad7dea.mp4",
+        "poster": "",
+        "duration": 49
+      }
+    ],
+    "specs": [
+      [
+        "Год",
+        "2013"
+      ],
+      [
+        "Состояние",
+        "б/у"
+      ],
+      [
+        "Тактность",
+        "4-тактный"
+      ],
+      [
+        "Длина ноги",
+        "L (508 мм)"
+      ],
+      [
+        "Подъем",
+        "гидравлический"
+      ],
+      [
+        "Компрессия",
+        "15/15/15/15"
+      ],
+      [
+        "Наработка",
+        "858 м/час"
+      ],
+      [
+        "Управление",
+        "дистанционное"
+      ],
+      [
+        "Комплект",
+        ""
+      ],
+      [
+        "Возможность увеличения мощности",
+        ""
+      ]
+    ]
   }
 ]
